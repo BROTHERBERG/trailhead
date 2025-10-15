@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1e5c5b;
+  --primary-light: #398da8;
+  --accent: #ff8359;
+  --cream: #fcf6ed;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Accessibility: Focus visible styles */
+*:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Screen reader only utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+/* Wobble animations */
+@keyframes wobble-left {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes wobble-right {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+}
+
+@keyframes wobble-top {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-4px); }
+  75% { transform: translateY(-4px); }
+}
+
+@keyframes wobble-bottom {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(4px); }
+  75% { transform: translateY(4px); }
+}
+
+@keyframes wobble-center {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.wobble-left {
+  animation: wobble-left 0.5s ease-in-out;
+}
+
+.wobble-right {
+  animation: wobble-right 0.5s ease-in-out;
+}
+
+.wobble-top {
+  animation: wobble-top 0.5s ease-in-out;
+}
+
+.wobble-bottom {
+  animation: wobble-bottom 0.5s ease-in-out;
+}
+
+.wobble-center {
+  animation: wobble-center 0.5s ease-in-out;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}

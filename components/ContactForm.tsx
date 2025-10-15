@@ -1,0 +1,240 @@
+"use client";
+
+import { useState } from "react";
+
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    projectType: "one-page"
+  });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      // Submit to Formspree
+      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          projectType: "one-page"
+        });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+  };
+
+  return (
+    <section id="contact" className="bg-[#073742] py-16 md:py-24 lg:py-32">
+      <div className="max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <p className="font-jetbrains text-xs md:text-sm text-[#c8e3da] uppercase tracking-wider mb-4">
+            Get Started
+          </p>
+          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-cream uppercase mb-4">
+            Let's Build Your<br />Website
+          </h2>
+          <p className="font-riposte text-cream/80 text-lg max-w-2xl mx-auto">
+            Tell us about your project and we'll get back to you within 24 hours
+          </p>
+        </div>
+
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="bg-[#f5f0e9] rounded-3xl p-8 md:p-12">
+          <div className="space-y-6">
+            {/* Name */}
+            <div>
+              <label htmlFor="name" className="block font-jetbrains text-sm text-[#073742] uppercase tracking-wide mb-2">
+                Your Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className={`w-full px-4 py-3 rounded-lg border-2 ${
+                  errors.name ? 'border-accent' : 'border-[#073742]/20'
+                } focus:border-[#073742] focus:outline-none transition-colors font-riposte`}
+                placeholder="John Doe"
+              />
+              {errors.name && (
+                <p className="mt-1 text-sm text-accent font-riposte">{errors.name}</p>
+              )}
+            </div>
+
+            {/* Email & Phone Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="email" className="block font-jetbrains text-sm text-[#073742] uppercase tracking-wide mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={`w-full px-4 py-3 rounded-lg border-2 ${
+                    errors.email ? 'border-accent' : 'border-[#073742]/20'
+                  } focus:border-[#073742] focus:outline-none transition-colors font-riposte`}
+                  placeholder="john@example.com"
+                />
+                {errors.email && (
+                  <p className="mt-1 text-sm text-accent font-riposte">{errors.email}</p>
+                )}
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="block font-jetbrains text-sm text-[#073742] uppercase tracking-wide mb-2">
+                  Phone (Optional)
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-lg border-2 border-[#073742]/20 focus:border-[#073742] focus:outline-none transition-colors font-riposte"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+            </div>
+
+            {/* Project Type */}
+            <div>
+              <label htmlFor="projectType" className="block font-jetbrains text-sm text-[#073742] uppercase tracking-wide mb-2">
+                I'm Interested In
+              </label>
+              <select
+                id="projectType"
+                name="projectType"
+                value={formData.projectType}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg border-2 border-[#073742]/20 focus:border-[#073742] focus:outline-none transition-colors font-riposte bg-white"
+              >
+                <option value="one-page">One-Page Website ($750)</option>
+                <option value="multi-page">Multi-Page Website ($1,500)</option>
+                <option value="maintenance">Maintenance Only ($25/mo)</option>
+                <option value="other">Something Else</option>
+              </select>
+            </div>
+
+            {/* Message */}
+            <div>
+              <label htmlFor="message" className="block font-jetbrains text-sm text-[#073742] uppercase tracking-wide mb-2">
+                Tell Us About Your Project *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={5}
+                className={`w-full px-4 py-3 rounded-lg border-2 ${
+                  errors.message ? 'border-accent' : 'border-[#073742]/20'
+                } focus:border-[#073742] focus:outline-none transition-colors font-riposte resize-none`}
+                placeholder="What are you looking to build? Any specific features or requirements?"
+              />
+              {errors.message && (
+                <p className="mt-1 text-sm text-accent font-riposte">{errors.message}</p>
+              )}
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-[#073742] text-cream font-riposte px-10 py-4 rounded-full text-base md:text-lg uppercase tracking-tight transition-all duration-300 hover:bg-[#0a4f5f] hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+
+            {/* Success/Error Messages */}
+            {submitStatus === "success" && (
+              <div className="bg-[#c8e3da] border-2 border-[#073742] rounded-lg p-4 text-center">
+                <p className="font-riposte text-[#073742] font-bold">
+                  Thanks! We'll get back to you within 24 hours.
+                </p>
+              </div>
+            )}
+
+            {submitStatus === "error" && (
+              <div className="bg-accent/10 border-2 border-accent rounded-lg p-4 text-center">
+                <p className="font-riposte text-accent font-bold">
+                  Something went wrong. Please try again or email us directly.
+                </p>
+              </div>
+            )}
+          </div>
+        </form>
+      </div>
+    </section>
+  );
+}
