@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment, useRef } from "react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let ticking = false;
@@ -24,16 +26,46 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle ESC key to close mobile menu
+  // Handle ESC key and focus trap for mobile menu
   useEffect(() => {
+    if (!mobileMenuOpen) return;
+
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && mobileMenuOpen) {
+      if (e.key === 'Escape') {
         setMobileMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    const handleTab = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab' || !mobileMenuRef.current) return;
+
+      const focusableElements = mobileMenuRef.current.querySelectorAll(
+        'a[href], button:not([disabled])'
+      );
+      const firstElement = focusableElements[0] as HTMLElement;
+      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement?.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement?.focus();
       }
     };
 
     window.addEventListener('keydown', handleEscape);
-    return () => window.removeEventListener('keydown', handleEscape);
+    window.addEventListener('keydown', handleTab);
+
+    // Focus first menu item when opened
+    const firstLink = mobileMenuRef.current?.querySelector('a') as HTMLElement;
+    firstLink?.focus();
+
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+      window.removeEventListener('keydown', handleTab);
+    };
   }, [mobileMenuOpen]);
 
   // Close mobile menu when clicking a link
@@ -105,6 +137,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
+          ref={menuButtonRef}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden w-10 h-10 flex items-center justify-center"
           aria-label="Toggle menu"
@@ -132,6 +165,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div
+            ref={mobileMenuRef}
             id="mobile-menu"
             className="md:hidden fixed inset-0 top-20 bg-[#073742] z-40 px-4 py-8"
           >

@@ -73,7 +73,7 @@ export default function GlobalError({
               marginBottom: '2rem',
               lineHeight: 1.6
             }}>
-              Something went seriously wrong. We've been notified and are working to fix it.
+              Something went seriously wrong. We&apos;ve been notified and are working to fix it.
             </p>
 
             <div style={{
@@ -102,8 +102,8 @@ export default function GlobalError({
                 Try Again
               </button>
 
-              <a
-                href="/"
+              <button
+                onClick={() => window.location.href = '/'}
                 style={{
                   background: '#ff8359',
                   color: '#fcf6ed',
@@ -121,7 +121,7 @@ export default function GlobalError({
                 onMouseOut={(e) => e.currentTarget.style.background = '#ff8359'}
               >
                 Go Home
-              </a>
+              </button>
             </div>
 
             {process.env.NODE_ENV === 'development' && (

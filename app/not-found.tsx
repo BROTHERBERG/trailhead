@@ -17,7 +17,7 @@ export default function NotFound() {
         </h2>
 
         <p className="font-riposte text-lg text-[#073742]/80 mb-8 leading-relaxed max-w-lg mx-auto">
-          Looks like you've wandered off the beaten path. The page you're looking for doesn't exist or has been moved.
+          Looks like you&apos;ve wandered off the beaten path. The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
 
         {/* Navigation suggestions */}

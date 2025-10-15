@@ -31,6 +31,18 @@ export default function Portfolio() {
     return () => observer.disconnect();
   }, []);
 
+  // Handle ESC key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedProject !== null) {
+        setSelectedProject(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [selectedProject]);
+
   const row1 = projects.slice(0, 7);
   const row2 = projects.slice(7, 14);
 

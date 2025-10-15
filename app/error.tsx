@@ -38,7 +38,7 @@ export default function Error({
         </h1>
 
         <p className="font-riposte text-lg text-[#073742]/80 mb-8 leading-relaxed">
-          We encountered an unexpected error. Don't worry, our team has been notified and we're working on it.
+          We encountered an unexpected error. Don&apos;t worry, our team has been notified and we&apos;re working on it.
         </p>
 
         {/* Error details (only in development) */}
@@ -64,12 +64,12 @@ export default function Error({
             Try Again
           </button>
 
-          <a
-            href="/"
+          <button
+            onClick={() => window.location.href = '/'}
             className="bg-accent text-cream font-riposte px-8 py-3 rounded-full text-base uppercase tracking-tight transition-all duration-300 hover:bg-accent/90 hover:shadow-xl"
           >
             Go Home
-          </a>
+          </button>
         </div>
 
         {/* Contact support */}

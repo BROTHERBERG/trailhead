@@ -98,29 +98,31 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Social */}
+            {/* Social - Remove this section or update with real links */}
+            {/*
             <div className="mr-8 md:mr-12 lg:mr-16">
               <h3 className="font-jetbrains text-base uppercase tracking-wider mb-3 md:mb-4">
                 Social
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="font-riposte text-base hover:text-accent transition-colors">
+                  <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer" className="font-riposte text-base hover:text-accent transition-colors">
                     INSTAGRAM
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="font-riposte text-base hover:text-accent transition-colors">
+                  <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" className="font-riposte text-base hover:text-accent transition-colors">
                     TWITTER
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="font-riposte text-base hover:text-accent transition-colors">
+                  <a href="https://linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer" className="font-riposte text-base hover:text-accent transition-colors">
                     LINKEDIN
                   </a>
                 </li>
               </ul>
             </div>
+            */}
           </div>
         </div>
 
