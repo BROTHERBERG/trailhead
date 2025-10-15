@@ -48,7 +48,15 @@ export default function ContactForm() {
 
     try {
       // Submit to Formspree
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+
+      if (!formspreeId) {
+        console.error("Formspree ID not configured");
+        setSubmitStatus("error");
+        return;
+      }
+
+      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -216,22 +224,28 @@ export default function ContactForm() {
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>
 
-            {/* Success/Error Messages */}
-            {submitStatus === "success" && (
-              <div className="bg-[#c8e3da] border-2 border-[#073742] rounded-lg p-4 text-center">
-                <p className="font-riposte text-[#073742] font-bold">
-                  Thanks! We'll get back to you within 24 hours.
-                </p>
-              </div>
-            )}
+            {/* Success/Error Messages with aria-live for screen readers */}
+            <div
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              {submitStatus === "success" && (
+                <div className="bg-[#c8e3da] border-2 border-[#073742] rounded-lg p-4 text-center">
+                  <p className="font-riposte text-[#073742] font-bold">
+                    Thanks! We'll get back to you within 24 hours.
+                  </p>
+                </div>
+              )}
 
-            {submitStatus === "error" && (
-              <div className="bg-accent/10 border-2 border-accent rounded-lg p-4 text-center">
-                <p className="font-riposte text-accent font-bold">
-                  Something went wrong. Please try again or email us directly.
-                </p>
-              </div>
-            )}
+              {submitStatus === "error" && (
+                <div className="bg-accent/10 border-2 border-accent rounded-lg p-4 text-center">
+                  <p className="font-riposte text-accent font-bold">
+                    Something went wrong. Please try again or email us directly.
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </form>
       </div>

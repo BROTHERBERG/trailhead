@@ -1,5 +1,3 @@
-"use client";
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
@@ -11,24 +9,13 @@ import ProcessTimeline from "@/components/ProcessTimeline";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
-import { useScrollFade } from "@/hooks/useScrollFade";
+import BackgroundOverlay from "@/components/BackgroundOverlay";
 
 export default function Home() {
-  const fadeOpacity = useScrollFade();
-
   return (
     <>
       <Navbar />
-
-      {/* Fixed background overlay that fades in */}
-      <div
-        className="fixed inset-0 pointer-events-none z-0"
-        style={{
-          backgroundColor: '#073742',
-          opacity: fadeOpacity,
-          transition: 'opacity 0.3s ease'
-        }}
-      />
+      <BackgroundOverlay />
 
       {/* Main content */}
       <main id="main-content" className="relative z-10 bg-[#f5f0e9]">

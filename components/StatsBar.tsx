@@ -22,6 +22,9 @@ export default function StatsBar() {
       }
     };
 
+    // Call once on mount to handle mid-page reloads
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
