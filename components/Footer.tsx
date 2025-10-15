@@ -204,9 +204,12 @@ export default function Footer() {
           <div className="font-jetbrains font-medium text-base">
             ©2025 TRAILHEAD.AGENCY
           </div>
-          <a href="#" className="font-jetbrains font-medium text-base uppercase underline hover:text-accent transition-colors">
+          {/* Add privacy policy link when page exists */}
+          {/*
+          <a href="/privacy" className="font-jetbrains font-medium text-base uppercase underline hover:text-accent transition-colors">
             Privacy Policy
           </a>
+          */}
         </div>
       </div>
     </footer>
