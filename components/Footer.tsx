@@ -139,16 +139,16 @@ export default function Footer() {
 
             {/* Email */}
             <a
-              href="mailto:jason@trailheadmade.com"
+              href="mailto:hello@trailheadmade.com"
               className="flex items-center gap-2 hover:text-accent transition-colors"
-              aria-label="Email us at jason@trailheadmade.com"
+              aria-label="Email us at hello@trailheadmade.com"
             >
               <div className="w-8 h-8 bg-cream rounded-md flex items-center justify-center shrink-0" aria-hidden="true">
                 <svg className="w-4 h-4 text-[#073742]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <span className="font-riposte text-base uppercase">jason@trailheadmade.com</span>
+              <span className="font-riposte text-base uppercase">hello@trailheadmade.com</span>
             </a>
 
             {/* Phone */}
