@@ -34,7 +34,7 @@ export default function SmoothScroll() {
         const href = anchor.getAttribute("href");
         if (href && href.startsWith("#")) {
           e.preventDefault();
-          const element = document.querySelector(href);
+          const element = document.querySelector(href) as HTMLElement;
           if (element) {
             lenis.scrollTo(element, {
               offset: 0,
