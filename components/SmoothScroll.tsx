@@ -13,7 +13,6 @@ export default function SmoothScroll() {
       gestureOrientation: "vertical",
       smoothWheel: true,       // Enable smooth scrolling for mouse wheel
       wheelMultiplier: 1,      // Mouse wheel sensitivity
-      smoothTouch: false,      // Disable on touch devices (better for mobile)
       touchMultiplier: 2,      // Touch scroll sensitivity
       infinite: false,         // No infinite scroll
     });
