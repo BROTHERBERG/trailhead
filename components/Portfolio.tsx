@@ -63,7 +63,7 @@ export default function Portfolio() {
       {/* Portfolio Cards - Two Rows */}
       <div className="overflow-x-auto pl-4 md:pl-8 lg:px-12 space-y-6">
         {/* Row 1 */}
-        <div className="relative h-[540px]">
+        <div className="relative h-[540px] pt-4">
           {row1.map((project, index) => {
             const cardWidth = 360;
             const gap = 24;
@@ -118,7 +118,7 @@ export default function Portfolio() {
         </div>
 
         {/* Row 2 */}
-        <div className="relative h-[540px]">
+        <div className="relative h-[540px] pt-4">
           {row2.map((project, index) => {
             const cardWidth = 360;
             const gap = 24;
