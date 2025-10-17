@@ -61,13 +61,13 @@ export default function Hero() {
         {/* Main Headline */}
         <div className="text-center mb-4 md:mb-2 max-w-5xl mx-auto">
           <h1 className="font-axel font-bold text-cream drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-            <span className="block text-[3rem] sm:text-7xl md:text-8xl lg:text-9xl mb-[-22px] sm:mb-[-12px] md:mb-[-16px] lg:mb-[-20px]">
+            <span className="block text-[2.5rem] sm:text-7xl md:text-8xl lg:text-9xl mb-[-18px] sm:mb-[-12px] md:mb-[-16px] lg:mb-[-20px]">
               READY TO
             </span>
-            <span className="block text-[3rem] sm:text-7xl md:text-8xl lg:text-9xl mb-[-22px] sm:mb-[-12px] md:mb-[-16px] lg:mb-[-20px]">
+            <span className="block text-[2.5rem] sm:text-7xl md:text-8xl lg:text-9xl mb-[-18px] sm:mb-[-12px] md:mb-[-16px] lg:mb-[-20px]">
               LEVEL UP YOUR
             </span>
-            <span className="block text-[3rem] sm:text-7xl md:text-8xl lg:text-9xl">
+            <span className="block text-[2.5rem] sm:text-7xl md:text-8xl lg:text-9xl">
               ONLINE&nbsp;PRESENCE?
             </span>
           </h1>
@@ -82,14 +82,14 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full sm:w-auto px-4 sm:px-0 max-w-md sm:max-w-none mb-6 md:mb-0 mt-8 md:mt-0">
           <a
             href="#work"
-            className="relative overflow-hidden border border-cream text-cream font-riposte px-6 md:px-8 py-1.5 md:py-2 rounded-full text-sm md:text-base tracking-tight transition-all duration-200 uppercase group"
+            className="relative overflow-hidden border border-cream text-cream font-riposte px-6 md:px-8 py-3 md:py-2 rounded-full text-sm md:text-base tracking-tight transition-all duration-200 uppercase group"
           >
             <span className="absolute inset-0 bg-accent transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
             <span className="relative z-10 transition-colors duration-300">View Portfolio</span>
           </a>
           <a
             href="#contact"
-            className="relative overflow-hidden bg-accent text-cream font-riposte px-6 md:px-8 py-1.5 md:py-2 rounded-full text-sm md:text-base tracking-tight transition-all duration-200 uppercase flex items-center justify-center gap-2 group border border-transparent hover:border-accent"
+            className="relative overflow-hidden bg-accent text-cream font-riposte px-6 md:px-8 py-3 md:py-2 rounded-full text-sm md:text-base tracking-tight transition-all duration-200 uppercase flex items-center justify-center gap-2 group border border-transparent hover:border-accent"
           >
             <span className="absolute inset-0 bg-cream transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
             <span className="relative z-10 group-hover:text-accent transition-colors duration-300 flex items-center gap-2">

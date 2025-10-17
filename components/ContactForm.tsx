@@ -98,7 +98,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="bg-[#073742] py-16 md:py-24 lg:py-32">
+    <section id="contact" className="bg-[#073742] py-12 md:py-20 lg:py-28">
       <div className="max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading */}
         <div className="mb-12 text-center">
@@ -127,7 +127,7 @@ export default function ContactForm() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-lg border-2 ${
+                className={`w-full px-4 py-4 rounded-lg border-2 ${
                   errors.name ? 'border-accent' : 'border-[#073742]/20'
                 } focus:border-[#073742] focus:outline-none transition-colors font-riposte`}
                 placeholder="John Doe"
@@ -149,7 +149,7 @@ export default function ContactForm() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 rounded-lg border-2 ${
+                  className={`w-full px-4 py-4 rounded-lg border-2 ${
                     errors.email ? 'border-accent' : 'border-[#073742]/20'
                   } focus:border-[#073742] focus:outline-none transition-colors font-riposte`}
                   placeholder="john@example.com"
@@ -169,7 +169,7 @@ export default function ContactForm() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border-2 border-[#073742]/20 focus:border-[#073742] focus:outline-none transition-colors font-riposte"
+                  className="w-full px-4 py-4 rounded-lg border-2 border-[#073742]/20 focus:border-[#073742] focus:outline-none transition-colors font-riposte"
                   placeholder="(555) 123-4567"
                 />
               </div>
@@ -185,7 +185,7 @@ export default function ContactForm() {
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border-2 border-[#073742]/20 focus:border-[#073742] focus:outline-none transition-colors font-riposte bg-white"
+                className="w-full px-4 py-4 rounded-lg border-2 border-[#073742]/20 focus:border-[#073742] focus:outline-none transition-colors font-riposte bg-white"
               >
                 <option value="one-page">One-Page Website ($750)</option>
                 <option value="multi-page">Multi-Page Website ($1,500)</option>
@@ -205,7 +205,7 @@ export default function ContactForm() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
-                className={`w-full px-4 py-3 rounded-lg border-2 ${
+                className={`w-full px-4 py-4 rounded-lg border-2 ${
                   errors.message ? 'border-accent' : 'border-[#073742]/20'
                 } focus:border-[#073742] focus:outline-none transition-colors font-riposte resize-none`}
                 placeholder="What are you looking to build? Any specific features or requirements?"

@@ -28,7 +28,7 @@ export default function ProcessTimeline() {
   ];
 
   return (
-    <section className="bg-[#073742] py-16 md:py-24 lg:py-32">
+    <section className="bg-[#073742] py-12 md:py-20 lg:py-28">
       <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading */}
         <div className="mb-12 md:mb-16 text-center">

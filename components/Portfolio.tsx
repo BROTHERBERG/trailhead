@@ -47,7 +47,7 @@ export default function Portfolio() {
   const row2 = projects.slice(7, 14);
 
   return (
-    <section ref={sectionRef} id="work" className="bg-[#f5f0e9] py-16 md:py-24 lg:py-32 overflow-hidden">
+    <section ref={sectionRef} id="work" className="bg-[#f5f0e9] py-12 md:py-20 lg:py-28 overflow-hidden">
       <div className="px-4 md:px-8 lg:px-12">
         {/* Heading */}
         <div className="mb-12 md:mb-16">
