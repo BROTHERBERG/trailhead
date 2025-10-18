@@ -75,7 +75,7 @@ export default function Hero() {
 
         {/* Subheading */}
         <p className="font-riposte text-[#C8E4DA] text-lg md:text-xl lg:text-2xl max-w-2xl text-center mb-4 md:mb-12 leading-relaxed px-2">
-          The no-nonsense website: one week, $750. Streamlined build process.<br />Clean design. Professional presence that performs.
+          Hand-crafted for your business, launched in six days.<br />Streamlined builds. Professional presence that performs.
         </p>
 
         {/* CTA Buttons */}
