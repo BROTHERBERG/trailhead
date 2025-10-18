@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex gap-12 md:gap-16 lg:gap-20 lg:ml-auto lg:mr-0">
+          <div className="flex gap-12 md:gap-16 lg:gap-20 lg:ml-auto lg:mr-8">
             {/* Sitemap */}
             <div>
               <h3 className="font-jetbrains text-base uppercase tracking-wider mb-3 md:mb-4">
@@ -139,30 +139,30 @@ export default function Footer() {
 
             {/* Email */}
             <a
-              href="mailto:hello@trailheadmade.com"
+              href="mailto:jord.dt@gmail.com"
               className="flex items-center gap-2 hover:text-accent transition-colors"
-              aria-label="Email us at hello@trailheadmade.com"
+              aria-label="Email us at jord.dt@gmail.com"
             >
               <div className="w-8 h-8 bg-cream rounded-md flex items-center justify-center shrink-0" aria-hidden="true">
                 <svg className="w-4 h-4 text-[#073742]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <span className="font-riposte text-base uppercase">hello@trailheadmade.com</span>
+              <span className="font-riposte text-base uppercase">jord.dt@gmail.com</span>
             </a>
 
             {/* Phone */}
             <a
-              href="tel:4034040014"
+              href="tel:5878876581"
               className="flex items-center gap-2 hover:text-accent transition-colors"
-              aria-label="Call us at (403) 404-0014"
+              aria-label="Call us at (587) 887-6581"
             >
               <div className="w-8 h-8 bg-cream rounded-md flex items-center justify-center shrink-0" aria-hidden="true">
                 <svg className="w-4 h-4 text-[#073742]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <span className="font-riposte text-base">(403) 404-0014</span>
+              <span className="font-riposte text-base">(587) 887-6581</span>
             </a>
           </div>
 
@@ -170,7 +170,7 @@ export default function Footer() {
           <div className="flex items-center gap-8">
             <div className="font-jetbrains font-medium text-base uppercase tracking-wide">
               HQ IN<br />
-              CALGARY,<br />
+              RED DEER,<br />
               ALBERTA
             </div>
             <div className="border-l-2 border-cream/30 h-20"></div>
@@ -178,10 +178,10 @@ export default function Footer() {
               src="/alberta.png"
               alt="Alberta Map"
               width={80}
-              height={80}
+              height={120}
               quality={85}
               loading="lazy"
-              className="w-20 h-20"
+              className="w-auto h-20 object-contain"
             />
             <div className="border-l-2 border-cream/30 h-20"></div>
             <Image
@@ -202,7 +202,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex items-center gap-4">
           <div className="font-jetbrains font-medium text-base">
-            ©2025 TRAILHEAD.AGENCY
+            ©2025 TRAILHEADMADE.COM
           </div>
           {/* Add privacy policy link when page exists */}
           {/*
