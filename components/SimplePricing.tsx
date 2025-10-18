@@ -1,3 +1,8 @@
+"use client";
+
+import CheckoutButton from "./CheckoutButton";
+import { STRIPE_PRODUCTS } from "@/lib/stripe-config";
+
 export default function SimplePricing() {
   const onePageFeatures = [
     "Custom one-page website design",
@@ -81,12 +86,13 @@ export default function SimplePricing() {
 
             {/* CTA and Hosting Info */}
             <div className="flex flex-col gap-4">
-              <a
-                href="#contact"
-                className="bg-[#073742] text-cream font-riposte px-8 py-3.5 rounded-full text-sm md:text-base uppercase tracking-tight transition-all duration-300 hover:bg-[#0a4f5f] hover:shadow-xl hover:shadow-[#073742]/20 text-center"
+              <CheckoutButton
+                priceId={STRIPE_PRODUCTS.signature.priceId}
+                productName="One-Page Website"
+                className="bg-[#073742] text-cream hover:bg-[#0a4f5f] hover:shadow-xl hover:shadow-[#073742]/20"
               >
                 Get Started Today
-              </a>
+              </CheckoutButton>
               <p className="font-riposte text-xs text-[#073742]/60 text-center">
                 Then $25/month for hosting & support
               </p>
