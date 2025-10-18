@@ -175,7 +175,7 @@ export default function Footer() {
             </div>
             <div className="border-l-2 border-cream/30 h-20"></div>
             <Image
-              src="/canyon.png"
+              src="/alberta.png"
               alt="Alberta Map"
               width={80}
               height={80}
