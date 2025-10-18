@@ -12,7 +12,7 @@ export default function FAQ() {
     },
     {
       question: "How long does it actually take?",
-      answer: "Most one-page sites are delivered in 5-7 days. We start as soon as we receive your content (text, images, branding). Multi-page sites typically take 10-14 days depending on complexity."
+      answer: "Most sites are delivered in 5-7 days. We start as soon as we receive your content (text, images, branding). Rush delivery available if needed."
     },
     {
       question: "Do I need to provide anything?",
@@ -24,11 +24,11 @@ export default function FAQ() {
     },
     {
       question: "Can I update the website myself after it's built?",
-      answer: "One-page sites are typically static for optimal performance and security. If you need regular content updates, our multi-page package includes a CMS, or you can add our maintenance plan for $25/month."
+      answer: "Sites are built for optimal performance and security. For regular content updates, add our maintenance plan for $25/month and we'll handle changes for you. Need a CMS? We can discuss that during your kickoff call."
     },
     {
       question: "What happens after the first year of hosting?",
-      answer: "After your first year (which is included), hosting and maintenance is $25/month for one-page sites or $35/month for multi-page sites. No long-term contracts required."
+      answer: "After your first year (which is included), hosting and maintenance is $25/month. No long-term contracts required—cancel anytime."
     },
     {
       question: "What if I need changes after launch?",
@@ -41,6 +41,10 @@ export default function FAQ() {
     {
       question: "Do you handle domain names and email?",
       answer: "We can help you register a domain or connect an existing one. For email, we recommend Google Workspace or similar services (not included in our packages, but we can help set it up)."
+    },
+    {
+      question: "What if I need more than one page?",
+      answer: "Our $750 package is optimized for one high-converting page. If you need additional pages (About, Services, Blog, etc.), we'll discuss scope and pricing during your kickoff call. Most businesses start with one page and add more later as they grow."
     },
     {
       question: "What makes you different from templates or DIY builders?",
