@@ -57,29 +57,29 @@ export default function Hero() {
       <div className="relative z-10">
 
       {/* Hero Content */}
-      <div className="flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 pt-36 md:pt-44 lg:pt-52 pb-0 md:pb-32 lg:pb-40">
+      <div className="flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 pt-28 md:pt-44 lg:pt-52 pb-16 md:pb-32 lg:pb-40">
         {/* Main Headline */}
-        <div className="text-center mb-4 md:mb-2 max-w-5xl mx-auto">
+        <div className="text-center mb-6 md:mb-2 max-w-5xl mx-auto">
           <h1 className="font-axel font-bold text-cream drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-            <span className="block text-[2.5rem] sm:text-7xl md:text-8xl lg:text-9xl mb-[-18px] sm:mb-[-12px] md:mb-[-16px] lg:mb-[-20px]">
+            <span className="block text-[2.75rem] sm:text-7xl md:text-8xl lg:text-9xl mb-[-12px] sm:mb-[-12px] md:mb-[-16px] lg:mb-[-20px]">
               READY TO
             </span>
-            <span className="block text-[2.5rem] sm:text-7xl md:text-8xl lg:text-9xl mb-[-18px] sm:mb-[-12px] md:mb-[-16px] lg:mb-[-20px]">
+            <span className="block text-[2.75rem] sm:text-7xl md:text-8xl lg:text-9xl mb-[-12px] sm:mb-[-12px] md:mb-[-16px] lg:mb-[-20px]">
               LEVEL UP YOUR
             </span>
-            <span className="block text-[2.5rem] sm:text-7xl md:text-8xl lg:text-9xl">
+            <span className="block text-[2.75rem] sm:text-7xl md:text-8xl lg:text-9xl">
               ONLINE&nbsp;PRESENCE?
             </span>
           </h1>
         </div>
 
         {/* Subheading */}
-        <p className="font-riposte text-[#C8E4DA] text-lg md:text-xl lg:text-2xl max-w-2xl text-center mb-4 md:mb-12 leading-relaxed px-2">
+        <p className="font-riposte text-[#C8E4DA] text-base md:text-xl lg:text-2xl max-w-2xl text-center mb-8 md:mb-12 leading-relaxed px-2">
           Hand-crafted for your business, launched in six days.<br />Streamlined builds. Professional presence that performs.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full sm:w-auto px-4 sm:px-0 max-w-md sm:max-w-none mb-6 md:mb-0 mt-8 md:mt-0">
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full sm:w-auto px-0 sm:px-0 max-w-sm sm:max-w-none mb-0 md:mb-0">
           <a
             href="#work"
             className="relative overflow-hidden border border-cream text-cream font-riposte px-6 md:px-8 py-3 md:py-2 rounded-full text-sm md:text-base tracking-tight transition-all duration-200 uppercase group"
