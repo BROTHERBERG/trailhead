@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
 
 const axel = localFont({
   src: "./fonts/BNAxelGrotesk-Bold.otf",
@@ -67,7 +66,6 @@ export default function RootLayout({
       <body
         className={`${axel.variable} ${jetbrains.variable} ${riposte.variable} font-riposte antialiased`}
       >
-        <SmoothScroll />
         {children}
       </body>
     </html>
