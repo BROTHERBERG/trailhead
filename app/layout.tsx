@@ -33,24 +33,36 @@ const riposte = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Trailhead | Professional Websites That Make You Money",
-  description: "Custom-designed websites for your business, delivered in less than a week, priced at $750. One-page sites optimized for conversions, not complexity.",
+  title: "Trailhead | Custom Websites Delivered in 6 Days",
+  description: "Hand-crafted for your business, launched in six days. Streamlined builds. Professional presence that performs. One-page websites starting at $750 USD.",
   keywords: ["web design", "website development", "small business websites", "one-page websites", "fast website delivery", "affordable web design"],
   authors: [{ name: "Trailhead" }],
   icons: {
     icon: "/cone-180.png",
     apple: "/cone-180.png",
   },
+  metadataBase: new URL('https://trailheadmade.com'),
   openGraph: {
-    title: "Trailhead | Professional Websites That Make You Money",
-    description: "Custom-designed websites delivered in less than a week, priced at $750—not $5,000.",
+    title: "Trailhead | Custom Websites Delivered in 6 Days",
+    description: "Hand-crafted for your business, launched in six days. Professional presence that performs. Starting at $750 USD.",
+    url: "https://trailheadmade.com",
+    siteName: "Trailhead",
+    images: [
+      {
+        url: "/og-image.png", // We'll need to create this
+        width: 1200,
+        height: 630,
+        alt: "Trailhead - Custom Websites Delivered in 6 Days",
+      },
+    ],
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trailhead | Professional Websites That Make You Money",
-    description: "Custom-designed websites delivered in less than a week, priced at $750—not $5,000.",
+    title: "Trailhead | Custom Websites Delivered in 6 Days",
+    description: "Hand-crafted for your business, launched in six days. Professional presence that performs. Starting at $750 USD.",
+    images: ["/og-image.png"],
   },
 };
 
