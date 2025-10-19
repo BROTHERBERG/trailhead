@@ -30,31 +30,28 @@ export async function POST(request: Request) {
 
     const maintenancePriceId = process.env.NEXT_PUBLIC_STRIPE_MAINTENANCE_PRICE_ID;
 
+    // Build line_items array with both one-time and subscription items
+    const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [
+      {
+        price: priceId, // $750 build (one-time)
+        quantity: 1,
+      },
+    ];
+
+    // Add maintenance subscription if included
+    if (includeMaintenance && maintenancePriceId) {
+      lineItems.push({
+        price: maintenancePriceId, // $18/mo maintenance (recurring)
+        quantity: 1,
+      });
+    }
+
     // Create Checkout Session
     // Use subscription mode to bundle one-time build fee + recurring maintenance
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       payment_method_types: ['card'],
-      // One-time build fee goes in line_items
-      line_items: [
-        {
-          price: priceId, // $750 build
-          quantity: 1,
-        },
-      ],
-      // Recurring maintenance subscription
-      subscription_data: includeMaintenance && maintenancePriceId
-        ? {
-            items: [
-              {
-                price: maintenancePriceId, // $18/mo maintenance
-              },
-            ],
-            metadata: {
-              maintenance_included: 'true',
-            },
-          }
-        : undefined,
+      line_items: lineItems,
       success_url: successUrl || `${process.env.NEXT_PUBLIC_SITE_URL || 'https://trailheadmade.com'}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: cancelUrl || `${process.env.NEXT_PUBLIC_SITE_URL || 'https://trailheadmade.com'}/#pricing`,
       billing_address_collection: 'required',
