@@ -68,8 +68,8 @@ export default function Services() {
       <div className="overflow-x-auto pl-4 md:pl-8 lg:pl-12">
         <div className="relative h-[360px] md:h-[480px]">
           {services.map((service, index) => {
-            const cardWidth = window.innerWidth < 768 ? 280 : 395;
-            const gap = window.innerWidth < 768 ? 12 : 24;
+            const cardWidth = typeof window !== 'undefined' && window.innerWidth < 768 ? 280 : 395;
+            const gap = typeof window !== 'undefined' && window.innerWidth < 768 ? 12 : 24;
             const initialOffset = index * 30; // Small offset when stacked
             const finalPosition = index * (cardWidth + gap);
             const currentPosition = isVisible ? finalPosition : initialOffset;
