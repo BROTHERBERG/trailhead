@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const { priceId, successUrl, cancelUrl } = body;
+    const { priceId, successUrl, cancelUrl, includeMaintenance = true } = body;
 
     if (!priceId) {
       return NextResponse.json(
@@ -28,21 +28,42 @@ export async function POST(request: Request) {
       );
     }
 
+    const maintenancePriceId = process.env.NEXT_PUBLIC_STRIPE_MAINTENANCE_PRICE_ID;
+
     // Create Checkout Session
+    // Use subscription mode to bundle one-time build fee + recurring maintenance
     const session = await stripe.checkout.sessions.create({
-      mode: 'payment',
+      mode: 'subscription',
       payment_method_types: ['card'],
+      // One-time build fee goes in line_items
       line_items: [
         {
-          price: priceId,
+          price: priceId, // $750 build
           quantity: 1,
         },
       ],
+      // Recurring maintenance subscription
+      subscription_data: includeMaintenance && maintenancePriceId
+        ? {
+            items: [
+              {
+                price: maintenancePriceId, // $18/mo maintenance
+              },
+            ],
+            metadata: {
+              maintenance_included: 'true',
+            },
+          }
+        : undefined,
       success_url: successUrl || `${process.env.NEXT_PUBLIC_SITE_URL || 'https://trailheadmade.com'}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: cancelUrl || `${process.env.NEXT_PUBLIC_SITE_URL || 'https://trailheadmade.com'}/#pricing`,
       billing_address_collection: 'required',
-      allow_promotion_codes: true, // Enable promo codes
-      customer_creation: 'always', // Create customer in Stripe
+      allow_promotion_codes: true,
+      customer_creation: 'always',
+      metadata: {
+        product: 'Trailhead Professional Website',
+        maintenance_included: includeMaintenance ? 'true' : 'false',
+      },
     });
 
     return NextResponse.json({ sessionId: session.id, url: session.url });

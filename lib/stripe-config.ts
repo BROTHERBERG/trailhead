@@ -12,43 +12,37 @@
  */
 
 export const STRIPE_PRODUCTS = {
-  // Signature Package - $2,000
+  // Professional Website - $750 one-time
   signature: {
-    name: 'Signature Package',
-    description: 'Complete website in 6 days with professional design and development',
-    price: 2000,
-    priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_SIGNATURE || 'price_xxxxxxxxxxxxx', // Replace with your Price ID
+    name: 'Professional Website',
+    description: 'Custom one-page website delivered in 6 days or less',
+    price: 750,
+    priceId: process.env.NEXT_PUBLIC_STRIPE_BUILD_PRICE_ID || 'price_xxxxxxxxxxxxx', // Replace with your Price ID
     features: [
-      'Custom Design & Branding',
-      'Up to 5 Pages',
-      'Mobile Responsive',
-      'SEO Optimized',
-      'Contact Form Integration',
-      '6-Day Delivery',
-      '30-Day Support',
+      'Custom one-page website design',
+      'Mobile-optimized & lightning-fast performance',
+      'Professional SEO & analytics setup',
+      'Security, SSL & contact forms configured',
+      'Two rounds of revisions included',
+      'Delivered in 6 days or less',
     ],
   },
 
-  // Add-ons (optional - create these in Stripe if needed)
-  additionalPage: {
-    name: 'Additional Page',
-    description: 'Add extra pages to your website',
-    price: 300,
-    priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_ADDITIONAL_PAGE || 'price_xxxxxxxxxxxxx',
-  },
-
-  ecommerce: {
-    name: 'E-commerce Integration',
-    description: 'Full online store with payment processing',
-    price: 800,
-    priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_ECOMMERCE || 'price_xxxxxxxxxxxxx',
-  },
-
-  blog: {
-    name: 'Blog/CMS Setup',
-    description: 'Content management system for easy updates',
-    price: 400,
-    priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_BLOG || 'price_xxxxxxxxxxxxx',
+  // Maintenance & Hosting - $18/mo recurring
+  maintenance: {
+    name: 'Maintenance & Hosting',
+    description: 'Required for hosting - includes updates, SSL, and support',
+    price: 18,
+    priceId: process.env.NEXT_PUBLIC_STRIPE_MAINTENANCE_PRICE_ID || 'price_xxxxxxxxxxxxx', // Replace with your Price ID
+    recurring: 'monthly',
+    features: [
+      'Hosting & SSL certificates',
+      'Two content updates per month (up to 30 min each)',
+      'Security & performance updates',
+      'Uptime monitoring & backups',
+      'Priority email support',
+      'Additional edits: $10 USD each',
+    ],
   },
 } as const;
 
