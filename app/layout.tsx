@@ -37,6 +37,10 @@ export const metadata: Metadata = {
   description: "Custom-designed websites for your business, delivered in less than a week, priced at $750. One-page sites optimized for conversions, not complexity.",
   keywords: ["web design", "website development", "small business websites", "one-page websites", "fast website delivery", "affordable web design"],
   authors: [{ name: "Trailhead" }],
+  icons: {
+    icon: "/cone-180.png",
+    apple: "/cone-180.png",
+  },
   openGraph: {
     title: "Trailhead | Professional Websites That Make You Money",
     description: "Custom-designed websites delivered in less than a week, priced at $750—not $5,000.",
