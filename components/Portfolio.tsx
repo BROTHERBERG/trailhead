@@ -54,14 +54,14 @@ export default function Portfolio() {
           <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             MADE WITH LOVE
           </p>
-          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase">
+          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-normal">
             OUR PROJECTS
           </h2>
         </div>
       </div>
 
       {/* Portfolio Cards - Two Rows */}
-      <div className="overflow-x-auto pl-4 md:pl-8 lg:px-12 space-y-6">
+      <div className="overflow-x-auto pl-4 md:pl-8 lg:px-12 space-y-3 md:space-y-6">
         {/* Row 1 */}
         <div className="relative h-[480px] pt-4">
           {row1.map((project, index) => {

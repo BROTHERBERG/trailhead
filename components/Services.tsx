@@ -59,7 +59,7 @@ export default function Services() {
           <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             SERVICES
           </p>
-          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-tight">
+          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-tight">
             HELPING BUSINESSES<br />STAND OUT ONLINE WITH...
           </h2>
         </div>
@@ -99,7 +99,7 @@ export default function Services() {
                   </span>
                 </div>
                 {index === 0 && (
-                  <div className="absolute bottom-0 right-0 w-[220px] md:w-[320px] h-[220px] md:h-[320px]">
+                  <div className="absolute bottom-0 right-0 w-[180px] md:w-[320px] h-[180px] md:h-[320px]">
                     <Image
                       src="/card-web.png"
                       alt="Web Design Illustration"
@@ -111,7 +111,7 @@ export default function Services() {
                   </div>
                 )}
                 {index === 1 && (
-                  <div className="absolute bottom-2 right-0 w-[200px] md:w-[300px] h-[200px] md:h-[300px]">
+                  <div className="absolute bottom-2 right-0 w-[160px] md:w-[300px] h-[160px] md:h-[300px]">
                     <Image
                       src="/card-dev.png"
                       alt="Development Illustration"
@@ -123,7 +123,7 @@ export default function Services() {
                   </div>
                 )}
                 {index === 2 && (
-                  <div className="absolute bottom-0 right-0 w-[240px] md:w-[340px] h-[240px] md:h-[340px]">
+                  <div className="absolute bottom-0 right-0 w-[200px] md:w-[340px] h-[200px] md:h-[340px]">
                     <Image
                       src="/card-branding.png"
                       alt="Branding Illustration"
@@ -135,7 +135,7 @@ export default function Services() {
                   </div>
                 )}
                 {index === 3 && (
-                  <div className="absolute bottom-0 right-0 w-[220px] md:w-[320px] h-[220px] md:h-[320px]">
+                  <div className="absolute bottom-0 right-0 w-[180px] md:w-[320px] h-[180px] md:h-[320px]">
                     <Image
                       src="/card-strategy.png"
                       alt="Strategy Illustration"

@@ -23,14 +23,14 @@ export default function SimplePricing() {
   ];
 
   return (
-    <section className="bg-[#f5f0e9] py-12 md:py-20 lg:py-28">
+    <section className="bg-[#f5f0e9] pt-0 pb-12 md:py-20 lg:py-28">
       <div className="px-4 md:px-8 lg:px-12">
         {/* Eyebrow and Title */}
         <div className="mb-12 md:mb-16 text-center">
           <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             PRICING
           </p>
-          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-tight mb-4">
+          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-tight mb-4">
             One Price.<br />No Hidden Fees.
           </h2>
           <p className="font-riposte text-lg md:text-xl text-[#073742]/70 max-w-2xl mx-auto">

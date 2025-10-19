@@ -49,14 +49,14 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="bg-[#f5f0e9] py-12 md:py-20 lg:py-28">
+    <section className="bg-[#f5f0e9] py-12 md:py-20 md:pb-8 lg:py-28 lg:pb-12">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading */}
         <div className="mb-12 md:mb-16 text-center">
           <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             FAQ
           </p>
-          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase">
+          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-normal">
             Common<br />Questions
           </h2>
         </div>
@@ -115,19 +115,6 @@ export default function FAQ() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Still have questions CTA */}
-        <div className="mt-12 text-center">
-          <p className="font-riposte text-[#073742]/70 text-lg mb-4">
-            Still have questions?
-          </p>
-          <a
-            href="#contact"
-            className="inline-block border border-[#073742] text-[#073742] font-riposte px-8 py-3 rounded-full text-base uppercase tracking-tight transition-all duration-200 hover:bg-[#073742] hover:text-cream"
-          >
-            Get In Touch
-          </a>
         </div>
       </div>
     </section>
