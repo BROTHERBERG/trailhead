@@ -39,7 +39,7 @@ export default function Footer() {
       <div className="px-6 md:px-10 lg:px-14 pt-8 md:pt-12 lg:pt-16 pb-6 md:pb-8 lg:pb-10">
         <div className="flex flex-col lg:flex-row items-start lg:items-end gap-8 mb-12 md:mb-16">
           {/* Logo & CTA */}
-          <div className="flex items-end gap-2 md:gap-3 lg:mr-auto lg:-ml-8">
+          <div className="flex items-end gap-2 md:gap-3 lg:mr-auto lg:-ml-8 -mx-4 md:mx-0">
             <div className="shrink-0 translate-y-6">
               <Image
                 src="/trailhead-icon.png"
@@ -48,11 +48,11 @@ export default function Footer() {
                 height={220}
                 quality={85}
                 loading="lazy"
-                className="w-44 md:w-48 lg:w-56 h-auto"
+                className="w-48 md:w-48 lg:w-56 h-auto"
               />
             </div>
             <div className="flex flex-col justify-end">
-              <h2 className="font-axel font-bold text-5xl md:text-6xl lg:text-7xl mb-5 uppercase" style={{ lineHeight: '0.85', color: '#fff5e0' }}>
+              <h2 className="font-axel font-bold text-[2rem] md:text-6xl lg:text-7xl mb-5 uppercase" style={{ lineHeight: '0.85', color: '#fff5e0' }}>
                 LEVEL UP YOUR<br />
                 PRESENCE TODAY
               </h2>
@@ -68,13 +68,13 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex gap-12 md:gap-16 lg:gap-20 lg:ml-auto lg:mr-8">
+          <div className="flex gap-12 md:gap-16 lg:gap-20 lg:ml-auto lg:mr-16 mt-8 md:mt-0">
             {/* Sitemap */}
             <div>
-              <h3 className="font-jetbrains text-base uppercase tracking-wider mb-3 md:mb-4">
+              <h3 className="font-jetbrains text-base uppercase tracking-wider mb-3 md:mb-4 hidden md:block">
                 Sitemap
               </h3>
-              <ul className="space-y-3">
+              <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-8 gap-y-3">
                 <li>
                   <a href="/" className="font-riposte text-base hover:text-accent transition-colors">
                     HOME
@@ -133,7 +133,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-6 md:mb-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-8 flex-wrap">
             {/* Send Note */}
-            <div className="font-riposte text-base uppercase tracking-wide">
+            <div className="font-riposte text-base uppercase tracking-wide hidden md:block">
               Send us a note
             </div>
 
@@ -154,7 +154,7 @@ export default function Footer() {
             {/* Phone */}
             <a
               href="tel:5878876581"
-              className="flex items-center gap-2 hover:text-accent transition-colors"
+              className="flex items-center gap-3 hover:text-accent transition-colors"
               aria-label="Call us at (587) 887-6581"
             >
               <div className="w-8 h-8 bg-cream rounded-md flex items-center justify-center shrink-0" aria-hidden="true">

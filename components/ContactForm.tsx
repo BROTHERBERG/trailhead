@@ -98,23 +98,23 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="bg-[#073742] py-12 md:py-20 lg:py-28">
+    <section id="contact" className="bg-[#f5f0e9] py-12 md:py-20 lg:py-28">
       <div className="max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading */}
         <div className="mb-12 text-center">
-          <p className="font-jetbrains text-xs md:text-sm text-[#c8e3da] uppercase tracking-wider mb-4">
+          <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             Get Started
           </p>
-          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-cream uppercase mb-4">
+          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase mb-4">
             Let's Build Your<br />Website
           </h2>
-          <p className="font-riposte text-cream/80 text-lg max-w-2xl mx-auto">
+          <p className="font-riposte text-[#073742]/70 text-lg max-w-2xl mx-auto">
             Tell us about your project and we'll get back to you within 24 hours
           </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="bg-[#f5f0e9] rounded-3xl p-8 md:p-12">
+        <form onSubmit={handleSubmit} className="bg-[#fff7f0] rounded-3xl p-8 md:p-12">
           <div className="space-y-6">
             {/* Name */}
             <div>
@@ -187,9 +187,9 @@ export default function ContactForm() {
                 onChange={handleChange}
                 className="w-full px-4 py-4 rounded-lg border-2 border-[#073742]/20 focus:border-[#073742] focus:outline-none transition-colors font-riposte bg-white"
               >
-                <option value="one-page">One-Page Website ($750)</option>
-                <option value="multi-page">Multi-Page Website ($1,500)</option>
-                <option value="maintenance">Maintenance Only ($25/mo)</option>
+                <option value="one-page">One-Page Website ($750 USD)</option>
+                <option value="multi-page">Multi-Page Website (Custom Quote)</option>
+                <option value="maintenance">Maintenance Only ($18 USD/mo)</option>
                 <option value="other">Something Else</option>
               </select>
             </div>

@@ -8,7 +8,7 @@ export default function FAQ() {
   const faqs = [
     {
       question: "What's included in the one-page website package?",
-      answer: "Everything you need: custom design, mobile optimization, SEO setup, contact forms, analytics, security/SSL, hosting for the first year, and two rounds of revisions. It's a complete, ready-to-launch website."
+      answer: "Everything you need to launch: custom design, mobile optimization, SEO setup, contact forms, analytics, security/SSL, and two rounds of revisions. It's a complete, ready-to-launch website. Ongoing hosting requires our $18/mo maintenance plan."
     },
     {
       question: "How long does it actually take?",
@@ -24,15 +24,15 @@ export default function FAQ() {
     },
     {
       question: "Can I update the website myself after it's built?",
-      answer: "Sites are built for optimal performance and security. For regular content updates, add our maintenance plan for $25/month and we'll handle changes for you. Need a CMS? We can discuss that during your kickoff call."
+      answer: "Sites are built for optimal performance and security. For regular content updates, our $18/mo maintenance plan includes two updates per month (up to 30 minutes each). Additional edits are $10 each. Need a CMS? We can discuss that during your kickoff call."
     },
     {
-      question: "What happens after the first year of hosting?",
-      answer: "After your first year (which is included), hosting and maintenance is $25/month. No long-term contracts required—cancel anytime."
+      question: "What about hosting and maintenance?",
+      answer: "Ongoing hosting requires our maintenance plan at $18 USD/month (~$25 CAD). This includes hosting, SSL, two content updates per month, security updates, and priority support. No long-term contracts—cancel anytime. Without it, you'll need to host your site elsewhere."
     },
     {
       question: "What if I need changes after launch?",
-      answer: "Your package includes two rounds of revisions during the build process. After launch, minor tweaks are usually free, but larger changes can be added to a maintenance plan or quoted separately."
+      answer: "Your package includes two rounds of revisions during the build process. After launch, the maintenance plan includes two content updates per month. Additional edits beyond that are $10 USD each, or you can request a custom quote for larger projects."
     },
     {
       question: "Will my site work on mobile phones?",
@@ -79,7 +79,7 @@ export default function FAQ() {
                 aria-controls={`faq-panel-${index}`}
                 id={`faq-button-${index}`}
               >
-                <h3 className="font-axel font-bold text-lg md:text-xl text-[#073742] pr-8">
+                <h3 className="font-jetbrains text-lg md:text-xl text-[#073742] pr-8">
                   {faq.question}
                 </h3>
                 <div

@@ -8,18 +8,18 @@ export default function SimplePricing() {
     "Custom one-page website design",
     "Mobile-optimized & lightning-fast performance",
     "Professional SEO & analytics setup",
-    "First year hosting & maintenance included",
     "Security, SSL & contact forms configured",
     "Two rounds of revisions included",
     "Delivered in 6 days or less"
   ];
 
   const maintenanceFeatures = [
-    "Hosting & security updates",
-    "Content updates (up to 2 per month)",
-    "Performance monitoring",
-    "Backup & recovery",
-    "Email support"
+    "Hosting & SSL certificates",
+    "Two content updates per month (up to 30 min each)",
+    "Security & performance updates",
+    "Uptime monitoring & backups",
+    "Priority email support",
+    "Additional edits: $10 USD each"
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function SimplePricing() {
             One Price.<br />No Hidden Fees.
           </h2>
           <p className="font-riposte text-lg md:text-xl text-[#073742]/70 max-w-2xl mx-auto">
-            Professional websites delivered fast. No complexity, no upsells, no surprises.
+            Professional websites delivered fast.<br />No complexity, no upsells, no surprises.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export default function SimplePricing() {
                 Get Started Today
               </CheckoutButton>
               <p className="font-riposte text-xs text-[#073742]/60 text-center">
-                Then $25/month for hosting & support
+                + $18 USD/mo (~$25 CAD) for hosting & maintenance
               </p>
               <p className="font-riposte text-xs text-accent text-center font-medium">
                 Need more pages? We'll discuss during your kickoff call.
@@ -109,10 +109,10 @@ export default function SimplePricing() {
                 </h3>
               </div>
               <p className="font-axel font-bold text-5xl md:text-6xl text-[#073742] mb-2">
-                $25<span className="text-2xl">/mo</span>
+                $18<span className="text-2xl">/mo</span>
               </p>
               <p className="font-riposte text-sm md:text-base text-[#073742]/60">
-                For existing sites only
+                ~$25 CAD • Required for hosting
               </p>
             </div>
 

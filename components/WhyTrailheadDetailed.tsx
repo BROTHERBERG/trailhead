@@ -34,7 +34,8 @@ export default function WhyTrailheadDetailed() {
               WHY TRAILHEAD
             </p>
             <h2 className="font-axel font-bold text-[2.5rem] md:text-5xl lg:text-6xl text-[#073742] leading-tight">
-              WHAT MAKES US<br />UNIQUE, MAKES YOUR<br />BRAND UNIQUE
+              <span className="md:hidden">WHAT MAKES US UNIQUE, MAKES YOUR BRAND UNIQUE</span>
+              <span className="hidden md:inline">WHAT MAKES US<br />UNIQUE, MAKES YOUR<br />BRAND UNIQUE</span>
             </h2>
             <div className="mt-12 md:mt-16">
               <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider border-b-2 border-[#073742] inline-block pb-1">
@@ -46,9 +47,9 @@ export default function WhyTrailheadDetailed() {
           {/* Right Column - Features Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-[1.2fr_1fr] gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="space-y-3">
+              <div key={index} className="flex md:flex-col gap-4 md:gap-0 md:space-y-3">
                 {/* Icon */}
-                <div className="w-16 h-16">
+                <div className="w-12 h-12 md:w-16 md:h-16 shrink-0">
                   <Image
                     src={feature.icon}
                     alt={feature.title}
@@ -58,12 +59,14 @@ export default function WhyTrailheadDetailed() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h3 className="font-axel font-bold text-[#073742] text-base md:text-lg uppercase tracking-wide">
-                  {feature.title}
-                </h3>
-                <p className="font-riposte text-[#073742] text-sm md:text-base leading-relaxed">
-                  {feature.description}
-                </p>
+                <div className="flex-1">
+                  <h3 className="font-axel font-bold text-[#073742] text-base md:text-lg uppercase tracking-wide">
+                    {feature.title}
+                  </h3>
+                  <p className="font-riposte text-[#073742] text-sm md:text-base leading-relaxed mt-2 md:mt-0">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

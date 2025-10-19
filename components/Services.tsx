@@ -66,10 +66,10 @@ export default function Services() {
 
       {/* Services Grid - Stacked Cards */}
       <div className="overflow-x-auto pl-4 md:pl-8 lg:pl-12">
-        <div className="relative h-[480px]">
+        <div className="relative h-[360px] md:h-[480px]">
           {services.map((service, index) => {
-            const cardWidth = 395;
-            const gap = 24;
+            const cardWidth = window.innerWidth < 768 ? 280 : 395;
+            const gap = window.innerWidth < 768 ? 12 : 24;
             const initialOffset = index * 30; // Small offset when stacked
             const finalPosition = index * (cardWidth + gap);
             const currentPosition = isVisible ? finalPosition : initialOffset;
@@ -77,7 +77,7 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="absolute rounded-2xl p-6 md:p-8 w-[395px] h-[460px] flex flex-col items-start group"
+                className="absolute rounded-2xl p-6 md:p-8 w-[280px] md:w-[395px] h-[340px] md:h-[460px] flex flex-col items-start group"
                 style={{
                   backgroundColor: service.color,
                   transform: `translateX(${currentPosition}px)`,

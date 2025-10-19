@@ -57,39 +57,42 @@ export default function Hero() {
       <div className="relative z-10">
 
       {/* Hero Content */}
-      <div className="flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 pt-28 md:pt-44 lg:pt-52 pb-16 md:pb-32 lg:pb-40">
+      <div className="flex flex-col items-center justify-center px-4 md:px-8 lg:px-12 pt-44 md:pt-44 lg:pt-52 pb-0 md:pb-32 lg:pb-40">
         {/* Main Headline */}
         <div className="text-center mb-6 md:mb-2 max-w-5xl mx-auto">
-          <h1 className="font-axel font-bold text-cream drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-            <span className="block text-[2.75rem] sm:text-7xl md:text-8xl lg:text-9xl mb-[-12px] sm:mb-[-12px] md:mb-[-16px] lg:mb-[-20px]">
+          <h1 className="font-axel font-bold text-cream drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] leading-[0.9]">
+            <span className="inline text-[4.5rem] md:hidden">
+              READY TO LEVEL UP YOUR ONLINE PRESENCE?
+            </span>
+            <span className="hidden md:block md:text-8xl lg:text-9xl mb-[-16px] lg:mb-[-20px]">
               READY TO
             </span>
-            <span className="block text-[2.75rem] sm:text-7xl md:text-8xl lg:text-9xl mb-[-12px] sm:mb-[-12px] md:mb-[-16px] lg:mb-[-20px]">
+            <span className="hidden md:block md:text-8xl lg:text-9xl mb-[-16px] lg:mb-[-20px]">
               LEVEL UP YOUR
             </span>
-            <span className="block text-[2.75rem] sm:text-7xl md:text-8xl lg:text-9xl">
+            <span className="hidden md:block md:text-8xl lg:text-9xl">
               ONLINE&nbsp;PRESENCE?
             </span>
           </h1>
         </div>
 
         {/* Subheading */}
-        <p className="font-riposte text-[#C8E4DA] text-base md:text-xl lg:text-2xl max-w-2xl text-center mb-8 md:mb-12 leading-relaxed px-2">
+        <p className="font-riposte text-[#C8E4DA] text-sm md:text-xl lg:text-2xl max-w-2xl text-center mb-8 md:mb-12 leading-relaxed px-2">
           Hand-crafted for your business, launched in six days.<br />Streamlined builds. Professional presence that performs.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full sm:w-auto px-0 sm:px-0 max-w-sm sm:max-w-none mb-0 md:mb-0">
+        <div className="flex flex-col sm:flex-row gap-2 md:gap-6 w-full sm:w-auto px-0 sm:px-0 max-w-sm sm:max-w-none mb-8 md:mb-0">
           <a
             href="#work"
-            className="relative overflow-hidden border border-cream text-cream font-riposte px-6 md:px-8 py-3 md:py-2 rounded-full text-sm md:text-base tracking-tight transition-all duration-200 uppercase group"
+            className="relative overflow-hidden border border-cream text-cream font-riposte font-bold px-6 md:px-8 py-3 md:py-2 rounded-full text-sm md:text-base tracking-wide transition-all duration-200 uppercase group text-center"
           >
             <span className="absolute inset-0 bg-accent transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
             <span className="relative z-10 transition-colors duration-300">View Portfolio</span>
           </a>
           <a
             href="#contact"
-            className="relative overflow-hidden bg-accent text-cream font-riposte px-6 md:px-8 py-3 md:py-2 rounded-full text-sm md:text-base tracking-tight transition-all duration-200 uppercase flex items-center justify-center gap-2 group border border-transparent hover:border-accent"
+            className="relative overflow-hidden bg-accent text-cream font-riposte font-bold px-6 md:px-8 py-3 md:py-2 rounded-full text-sm md:text-base tracking-wide transition-all duration-200 uppercase flex items-center justify-center gap-2 group border border-transparent hover:border-accent"
           >
             <span className="absolute inset-0 bg-cream transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
             <span className="relative z-10 group-hover:text-accent transition-colors duration-300 flex items-center gap-2">

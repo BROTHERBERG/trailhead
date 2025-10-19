@@ -4,13 +4,25 @@ import { useState, useEffect } from "react";
 
 export default function StatsBar() {
   const [scrollOpacity, setScrollOpacity] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if mobile on mount and resize
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      const fadeStart = windowHeight * 0.5;
-      const fadeEnd = windowHeight * 0.9;
+
+      // On mobile, trigger fade AFTER the Services section (much later)
+      // On desktop, keep the original behavior
+      const fadeStart = window.innerWidth < 768 ? windowHeight * 1.5 : windowHeight * 0.5;
+      const fadeEnd = window.innerWidth < 768 ? windowHeight * 2.0 : windowHeight * 0.9;
 
       if (scrollPosition < fadeStart) {
         setScrollOpacity(0);
@@ -26,7 +38,10 @@ export default function StatsBar() {
     handleScroll();
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
   const stats = [
@@ -50,11 +65,11 @@ export default function StatsBar() {
 
   return (
     <section
-      className="relative border-t-2 border-b-2 py-4 md:py-6 transition-all duration-300"
+      className="relative border-t-2 border-b-2 py-3 md:py-6 -mt-32 md:mt-0 transition-all duration-300"
       style={{ borderColor: scrollOpacity > 0.5 ? '#073742' : '#fcf6ed' }}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      <div className="max-w-7xl mx-auto pl-8 pr-4 md:px-8 lg:px-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
           {stats.map((stat, index) => (
             <div key={index} className="flex items-center gap-2 md:gap-3">
               <h3

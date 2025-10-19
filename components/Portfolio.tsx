@@ -47,10 +47,10 @@ export default function Portfolio() {
   const row2 = projects.slice(7, 14);
 
   return (
-    <section ref={sectionRef} id="work" className="bg-[#f5f0e9] py-12 md:py-20 lg:py-28 overflow-hidden">
+    <section ref={sectionRef} id="work" className="bg-[#f5f0e9] py-20 md:py-20 lg:py-28 overflow-hidden">
       <div className="px-4 md:px-8 lg:px-12">
         {/* Heading */}
-        <div className="mb-12 md:mb-16">
+        <div className="mb-8 md:mb-12">
           <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             MADE WITH LOVE
           </p>
@@ -63,7 +63,7 @@ export default function Portfolio() {
       {/* Portfolio Cards - Two Rows */}
       <div className="overflow-x-auto pl-4 md:pl-8 lg:px-12 space-y-6">
         {/* Row 1 */}
-        <div className="relative h-[540px] pt-4">
+        <div className="relative h-[480px] pt-4">
           {row1.map((project, index) => {
             const cardWidth = 360;
             const gap = 24;
@@ -102,23 +102,13 @@ export default function Portfolio() {
                     onLoad={() => handleImageLoad(index)}
                   />
                 </div>
-
-                {/* Project Info */}
-                <div className="w-[360px]">
-                  <h3 className="font-jetbrains font-bold text-[#073742] text-sm uppercase mb-1 tracking-wide">
-                    {project.businessType}
-                  </h3>
-                  <p className="font-riposte text-[#073742] text-sm">
-                    {project.description}
-                  </p>
-                </div>
               </button>
             );
           })}
         </div>
 
         {/* Row 2 */}
-        <div className="relative h-[540px] pt-4">
+        <div className="relative h-[480px] pt-4">
           {row2.map((project, index) => {
             const cardWidth = 360;
             const gap = 24;
@@ -158,16 +148,6 @@ export default function Portfolio() {
                     onLoad={() => handleImageLoad(projectIndex)}
                   />
                 </div>
-
-                {/* Project Info */}
-                <div className="w-[360px]">
-                  <h3 className="font-jetbrains font-bold text-[#073742] text-sm uppercase mb-1 tracking-wide">
-                    {project.businessType}
-                  </h3>
-                  <p className="font-riposte text-[#073742] text-sm">
-                    {project.description}
-                  </p>
-                </div>
               </button>
             );
           })}
@@ -202,16 +182,6 @@ export default function Portfolio() {
                 quality={90}
                 className="object-cover w-full h-auto"
               />
-            </div>
-
-            {/* Project Info */}
-            <div className="mt-3 text-center">
-              <h3 className="font-axel font-bold text-lg md:text-xl text-cream uppercase mb-1">
-                {projects[selectedProject].businessType}
-              </h3>
-              <p className="font-riposte text-sm md:text-base text-cream/90">
-                {projects[selectedProject].description}
-              </p>
             </div>
           </div>
         </div>
