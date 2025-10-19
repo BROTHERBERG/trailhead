@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function Services() {
   const [isVisible, setIsVisible] = useState(false);
@@ -77,7 +78,7 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="absolute rounded-2xl p-6 md:p-8 w-[280px] md:w-[395px] h-[340px] md:h-[460px] flex flex-col items-start group"
+                className="absolute rounded-2xl p-6 md:p-8 w-[280px] md:w-[395px] h-[340px] md:h-[460px] flex flex-col items-start group overflow-hidden"
                 style={{
                   backgroundColor: service.color,
                   transform: `translateX(${currentPosition}px)`,
@@ -97,6 +98,54 @@ export default function Services() {
                     {service.title}
                   </span>
                 </div>
+                {index === 0 && (
+                  <div className="absolute bottom-0 right-0 w-[220px] md:w-[320px] h-[220px] md:h-[320px]">
+                    <Image
+                      src="/card-web.png"
+                      alt="Web Design Illustration"
+                      fill
+                      className="object-contain object-bottom-right"
+                      quality={100}
+                      unoptimized
+                    />
+                  </div>
+                )}
+                {index === 1 && (
+                  <div className="absolute bottom-2 right-0 w-[200px] md:w-[300px] h-[200px] md:h-[300px]">
+                    <Image
+                      src="/card-dev.png"
+                      alt="Development Illustration"
+                      fill
+                      className="object-contain object-bottom-right"
+                      quality={100}
+                      unoptimized
+                    />
+                  </div>
+                )}
+                {index === 2 && (
+                  <div className="absolute bottom-0 right-0 w-[240px] md:w-[340px] h-[240px] md:h-[340px]">
+                    <Image
+                      src="/card-branding.png"
+                      alt="Branding Illustration"
+                      fill
+                      className="object-contain object-bottom-right"
+                      quality={100}
+                      unoptimized
+                    />
+                  </div>
+                )}
+                {index === 3 && (
+                  <div className="absolute bottom-0 right-0 w-[220px] md:w-[320px] h-[220px] md:h-[320px]">
+                    <Image
+                      src="/card-strategy.png"
+                      alt="Strategy Illustration"
+                      fill
+                      className="object-contain object-bottom-right"
+                      quality={100}
+                      unoptimized
+                    />
+                  </div>
+                )}
               </div>
             );
           })}

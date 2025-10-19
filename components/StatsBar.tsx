@@ -55,7 +55,7 @@ export default function StatsBar() {
 
   return (
     <section
-      className="relative border-t-2 border-b-2 py-3 md:py-6 -mt-32 md:mt-0 transition-all duration-300"
+      className="relative border-t-2 border-b-2 py-3 md:py-6 mt-0 transition-all duration-300"
       style={{ borderColor: scrollOpacity > 0.5 ? '#073742' : '#fcf6ed' }}
     >
       <div className="max-w-7xl mx-auto pl-8 pr-4 md:px-8 lg:px-12">

@@ -39,7 +39,7 @@ export default function ProcessTimeline() {
             From Idea To Live<br />In One Week
           </h2>
           <p className="font-riposte text-cream/80 text-lg max-w-2xl mx-auto">
-            A proven process that delivers professional websites without the endless revisions and delays
+            A proven process that delivers professional websites<br />without the endless revisions and delays
           </p>
         </div>
 

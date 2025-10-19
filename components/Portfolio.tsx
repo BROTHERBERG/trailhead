@@ -186,15 +186,6 @@ export default function Portfolio() {
           </div>
         </div>
       )}
-
-      <div className="px-4 md:px-8 lg:px-12 mt-8 flex justify-center">
-        <a
-          href="#work"
-          className="relative overflow-hidden border border-[#073742] text-[#073742] font-riposte px-8 py-3 rounded-full text-base uppercase tracking-tight transition-all duration-200 group hover:bg-[#073742] hover:text-cream"
-        >
-          <span className="relative z-10">See All Our Projects</span>
-        </a>
-      </div>
     </section>
   );
 }

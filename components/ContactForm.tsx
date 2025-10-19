@@ -114,11 +114,11 @@ export default function ContactForm() {
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="bg-[#fff7f0] rounded-3xl p-8 md:p-12">
+        <form onSubmit={handleSubmit} className="bg-[#073742] rounded-3xl p-8 md:p-12">
           <div className="space-y-6">
             {/* Name */}
             <div>
-              <label htmlFor="name" className="block font-jetbrains text-sm text-[#073742] uppercase tracking-wide mb-2">
+              <label htmlFor="name" className="block font-jetbrains text-sm text-cream uppercase tracking-wide mb-2">
                 Your Name *
               </label>
               <input
@@ -128,8 +128,8 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 className={`w-full px-4 py-4 rounded-lg border-2 ${
-                  errors.name ? 'border-accent' : 'border-[#073742]/20'
-                } focus:border-[#073742] focus:outline-none transition-colors font-riposte`}
+                  errors.name ? 'border-accent' : 'border-cream/20'
+                } focus:border-cream focus:outline-none transition-colors font-riposte bg-white/95`}
                 placeholder="John Doe"
               />
               {errors.name && (
@@ -140,7 +140,7 @@ export default function ContactForm() {
             {/* Email & Phone Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="email" className="block font-jetbrains text-sm text-[#073742] uppercase tracking-wide mb-2">
+                <label htmlFor="email" className="block font-jetbrains text-sm text-cream uppercase tracking-wide mb-2">
                   Email *
                 </label>
                 <input
@@ -150,8 +150,8 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   className={`w-full px-4 py-4 rounded-lg border-2 ${
-                    errors.email ? 'border-accent' : 'border-[#073742]/20'
-                  } focus:border-[#073742] focus:outline-none transition-colors font-riposte`}
+                    errors.email ? 'border-accent' : 'border-cream/20'
+                  } focus:border-cream focus:outline-none transition-colors font-riposte bg-white/95`}
                   placeholder="john@example.com"
                 />
                 {errors.email && (
@@ -160,7 +160,7 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block font-jetbrains text-sm text-[#073742] uppercase tracking-wide mb-2">
+                <label htmlFor="phone" className="block font-jetbrains text-sm text-cream uppercase tracking-wide mb-2">
                   Phone (Optional)
                 </label>
                 <input
@@ -169,7 +169,7 @@ export default function ContactForm() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-4 rounded-lg border-2 border-[#073742]/20 focus:border-[#073742] focus:outline-none transition-colors font-riposte"
+                  className="w-full px-4 py-4 rounded-lg border-2 border-cream/20 focus:border-cream focus:outline-none transition-colors font-riposte bg-white/95"
                   placeholder="(555) 123-4567"
                 />
               </div>
@@ -177,7 +177,7 @@ export default function ContactForm() {
 
             {/* Project Type */}
             <div>
-              <label htmlFor="projectType" className="block font-jetbrains text-sm text-[#073742] uppercase tracking-wide mb-2">
+              <label htmlFor="projectType" className="block font-jetbrains text-sm text-cream uppercase tracking-wide mb-2">
                 I'm Interested In
               </label>
               <select
@@ -185,7 +185,7 @@ export default function ContactForm() {
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleChange}
-                className="w-full px-4 py-4 rounded-lg border-2 border-[#073742]/20 focus:border-[#073742] focus:outline-none transition-colors font-riposte bg-white"
+                className="w-full px-4 py-4 rounded-lg border-2 border-cream/20 focus:border-cream focus:outline-none transition-colors font-riposte bg-white/95"
               >
                 <option value="one-page">One-Page Website ($750 USD)</option>
                 <option value="multi-page">Multi-Page Website (Custom Quote)</option>
@@ -196,7 +196,7 @@ export default function ContactForm() {
 
             {/* Message */}
             <div>
-              <label htmlFor="message" className="block font-jetbrains text-sm text-[#073742] uppercase tracking-wide mb-2">
+              <label htmlFor="message" className="block font-jetbrains text-sm text-cream uppercase tracking-wide mb-2">
                 Tell Us About Your Project *
               </label>
               <textarea
@@ -206,8 +206,8 @@ export default function ContactForm() {
                 onChange={handleChange}
                 rows={5}
                 className={`w-full px-4 py-4 rounded-lg border-2 ${
-                  errors.message ? 'border-accent' : 'border-[#073742]/20'
-                } focus:border-[#073742] focus:outline-none transition-colors font-riposte resize-none`}
+                  errors.message ? 'border-accent' : 'border-cream/20'
+                } focus:border-cream focus:outline-none transition-colors font-riposte resize-none bg-white/95`}
                 placeholder="What are you looking to build? Any specific features or requirements?"
               />
               {errors.message && (
@@ -219,7 +219,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#073742] text-cream font-riposte px-10 py-4 rounded-full text-base md:text-lg uppercase tracking-tight transition-all duration-300 hover:bg-[#0a4f5f] hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-[#ff6b35] text-[#073742] font-riposte px-10 py-4 rounded-full text-base md:text-lg uppercase tracking-tight transition-all duration-300 hover:bg-[#ff8555] hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed font-bold"
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>
@@ -231,7 +231,7 @@ export default function ContactForm() {
               aria-atomic="true"
             >
               {submitStatus === "success" && (
-                <div className="bg-[#c8e3da] border-2 border-[#073742] rounded-lg p-4 text-center">
+                <div className="bg-[#c8e3da] border-2 border-cream rounded-lg p-4 text-center">
                   <p className="font-riposte text-[#073742] font-bold">
                     Thanks! We'll get back to you within 24 hours.
                   </p>
@@ -239,8 +239,8 @@ export default function ContactForm() {
               )}
 
               {submitStatus === "error" && (
-                <div className="bg-accent/10 border-2 border-accent rounded-lg p-4 text-center">
-                  <p className="font-riposte text-accent font-bold">
+                <div className="bg-accent border-2 border-cream rounded-lg p-4 text-center">
+                  <p className="font-riposte text-[#073742] font-bold">
                     Something went wrong. Please try again or email us directly.
                   </p>
                 </div>

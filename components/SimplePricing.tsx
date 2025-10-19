@@ -91,7 +91,7 @@ export default function SimplePricing() {
                 Get Started Today
               </CheckoutButton>
               <p className="font-riposte text-xs text-[#073742]/60 text-center">
-                + $18 USD/mo (~$25 CAD) for hosting & maintenance
+                + $18 USD/mo for hosting & maintenance
               </p>
               <p className="font-riposte text-xs text-accent text-center font-medium">
                 Need more pages? We'll discuss during your kickoff call.
@@ -112,7 +112,7 @@ export default function SimplePricing() {
                 $18<span className="text-2xl">/mo</span>
               </p>
               <p className="font-riposte text-sm md:text-base text-[#073742]/60">
-                ~$25 CAD • Required for hosting
+                USD • Required for hosting
               </p>
             </div>
 

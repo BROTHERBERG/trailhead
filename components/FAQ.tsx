@@ -39,10 +39,6 @@ export default function FAQ() {
       answer: "Absolutely. Every site is mobile-first, meaning we design for phones first, then scale up. Over 60% of web traffic is mobile, so this is non-negotiable."
     },
     {
-      question: "Do you handle domain names and email?",
-      answer: "We can help you register a domain or connect an existing one. For email, we recommend Google Workspace or similar services (not included in our packages, but we can help set it up)."
-    },
-    {
       question: "What if I need more than one page?",
       answer: "Our $750 package is optimized for one high-converting page. If you need additional pages (About, Services, Blog, etc.), we'll discuss scope and pricing during your kickoff call. Most businesses start with one page and add more later as they grow."
     },
