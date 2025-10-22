@@ -5,9 +5,9 @@ import { useState, useRef } from "react";
 
 export default function Footer() {
   const [wobble, setWobble] = useState<string>("");
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const buttonRef = useRef<HTMLAnchorElement>(null);
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!buttonRef.current) return;
 
     const rect = buttonRef.current.getBoundingClientRect();
@@ -56,14 +56,15 @@ export default function Footer() {
                 LEVEL UP YOUR<br />
                 PRESENCE TODAY
               </h2>
-              <button
+              <a
+                href="#contact"
                 ref={buttonRef}
                 onMouseEnter={handleMouseEnter}
                 onAnimationEnd={handleAnimationEnd}
                 className={`border border-cream text-cream font-riposte px-8 py-3 rounded-full text-base uppercase tracking-wide transition-all duration-200 hover:bg-accent hover:border-accent w-fit ${wobble}`}
               >
-                Let's Talk
-              </button>
+                Start Your Build
+              </a>
             </div>
           </div>
 
@@ -74,7 +75,7 @@ export default function Footer() {
               <h3 className="font-jetbrains text-base uppercase tracking-wider mb-3 md:mb-4 hidden md:block">
                 Sitemap
               </h3>
-              <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-8 gap-y-3">
+              <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
                 <li>
                   <a href="/" className="font-riposte text-base hover:text-accent transition-colors">
                     HOME
@@ -91,8 +92,18 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
+                  <a href="/blog" className="font-riposte text-base hover:text-accent transition-colors">
+                    BLOG
+                  </a>
+                </li>
+                <li>
+                  <a href="/faq" className="font-riposte text-base hover:text-accent transition-colors">
+                    FAQ
+                  </a>
+                </li>
+                <li>
                   <a href="#contact" className="font-riposte text-base hover:text-accent transition-colors">
-                    CONTACT & FAQ
+                    CONTACT
                   </a>
                 </li>
               </ul>
@@ -139,30 +150,30 @@ export default function Footer() {
 
             {/* Email */}
             <a
-              href="mailto:jord.dt@gmail.com"
+              href="mailto:hello@trailheadmade.com"
               className="flex items-center gap-2 hover:text-accent transition-colors"
-              aria-label="Email us at jord.dt@gmail.com"
+              aria-label="Email us at hello@trailheadmade.com"
             >
               <div className="w-8 h-8 bg-cream rounded-md flex items-center justify-center shrink-0" aria-hidden="true">
                 <svg className="w-4 h-4 text-[#073742]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <span className="font-riposte text-base uppercase">jord.dt@gmail.com</span>
+              <span className="font-riposte text-base uppercase">hello@trailheadmade.com</span>
             </a>
 
             {/* Phone */}
             <a
-              href="tel:5878876581"
+              href="tel:4034040014"
               className="flex items-center gap-3 hover:text-accent transition-colors"
-              aria-label="Call us at (587) 887-6581"
+              aria-label="Call us at (403) 404-0014"
             >
               <div className="w-8 h-8 bg-cream rounded-md flex items-center justify-center shrink-0" aria-hidden="true">
                 <svg className="w-4 h-4 text-[#073742]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <span className="font-riposte text-base">(587) 887-6581</span>
+              <span className="font-riposte text-base">(403) 404-0014</span>
             </a>
           </div>
 
@@ -200,16 +211,33 @@ export default function Footer() {
         <div className="border-t border-cream/30 mb-6 md:mb-8"></div>
 
         {/* Bottom Section */}
-        <div className="flex items-center gap-4">
-          <div className="font-jetbrains font-medium text-base">
-            ©2025 TRAILHEADMADE.COM
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          {/* Legal Links */}
+          <div className="flex flex-wrap gap-x-6 gap-y-2 order-2 md:order-2">
+            <a href="/privacy" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+              Privacy
+            </a>
+            <a href="/terms" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+              Terms
+            </a>
+            <a href="/refund-policy" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+              Refunds
+            </a>
+            <a href="/cookies" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+              Cookies
+            </a>
+            <a href="/accessibility" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+              Accessibility
+            </a>
+            <a href="/legal" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+              Legal
+            </a>
           </div>
-          {/* Add privacy policy link when page exists */}
-          {/*
-          <a href="/privacy" className="font-jetbrains font-medium text-base uppercase underline hover:text-accent transition-colors">
-            Privacy Policy
-          </a>
-          */}
+
+          {/* Copyright */}
+          <div className="font-jetbrains font-medium text-[10px] md:text-sm text-cream/80 order-3 md:order-1">
+            © 2025 Trailheadmade.com · A Crush Digital Atelier LLC Company
+          </div>
         </div>
       </div>
     </footer>

@@ -6,7 +6,6 @@ import Portfolio from "@/components/Portfolio";
 import WhyTrailheadDetailed from "@/components/WhyTrailheadDetailed";
 import SimplePricing from "@/components/SimplePricing";
 import Testimonials from "@/components/Testimonials";
-import ProcessTimeline from "@/components/ProcessTimeline";
 import BlogPreview from "@/components/BlogPreview";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
@@ -21,8 +20,8 @@ export default function Home() {
     "legalName": "Crush Digital Atelier LLC",
     "description": "Custom website design and development in 6 days. Mobile-first, SEO-optimized, professional websites for small businesses.",
     "url": "https://trailheadmade.com",
-    "telephone": "+1-587-887-6581",
-    "email": "jord.dt@gmail.com",
+    "telephone": "+1-403-404-0014",
+    "email": "hello@trailheadmade.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Red Deer",
@@ -67,7 +66,6 @@ export default function Home() {
         <Portfolio />
         <SimplePricing />
         <Testimonials />
-        <ProcessTimeline />
         <BlogPreview />
         <ContactForm />
         <Footer />
