@@ -2,7 +2,12 @@ import { getAllPosts } from '@/lib/blog';
 
 export async function GET() {
   const posts = await getAllPosts();
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://trailheadmade.com';
+  let baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://trailheadmade.com';
+
+  // Ensure the URL has a protocol
+  if (!baseUrl.startsWith('http')) {
+    baseUrl = `https://${baseUrl}`;
+  }
 
   const rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
