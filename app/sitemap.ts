@@ -2,7 +2,12 @@ import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://trailheadmade.com';
+  let baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://trailheadmade.com';
+
+  // Ensure the URL has a protocol
+  if (!baseUrl.startsWith('http')) {
+    baseUrl = `https://${baseUrl}`;
+  }
 
   // Get all blog posts
   const posts = await getAllPosts();
