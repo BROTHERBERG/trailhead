@@ -14,7 +14,7 @@ export default function GoogleAnalytics() {
         const preferences = JSON.parse(consent);
         if (!preferences.analytics) {
           // User opted out - disable analytics
-          window[`ga-disable-${measurementId}`] = true;
+          (window as any)[`ga-disable-${measurementId}`] = true;
         }
       } catch {
         console.error("Error reading cookie preferences");

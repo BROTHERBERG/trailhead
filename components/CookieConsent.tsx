@@ -38,10 +38,10 @@ export default function CookieConsent() {
     const measurementId = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || 'G-KBP3LGE8ZQ';
     if (!prefs.analytics) {
       // Disable Google Analytics
-      window[`ga-disable-${measurementId}`] = true;
+      (window as any)[`ga-disable-${measurementId}`] = true;
     } else {
       // Re-enable if it was previously disabled
-      window[`ga-disable-${measurementId}`] = false;
+      (window as any)[`ga-disable-${measurementId}`] = false;
     }
 
     // Reload to ensure tracking state is applied
