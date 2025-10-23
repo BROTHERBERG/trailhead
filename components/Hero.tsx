@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { trackStartBuildClick } from "@/lib/analytics";
 
 export default function Hero() {
@@ -82,13 +81,6 @@ export default function Hero() {
         <p className="font-riposte text-[#C8E4DA] text-base md:text-xl lg:text-2xl max-w-2xl text-center mb-4 md:mb-6 leading-relaxed px-2">
           Hand-crafted for your business, launched in 6 days. Streamlined builds. Professional presence that performs.
         </p>
-
-        <Link
-          href="/blog/website-vs-social-media"
-          className="inline-flex items-center gap-2 text-accent font-riposte text-sm mb-8 md:mb-12 hover:gap-3 transition-all"
-        >
-          Website or social media first? →
-        </Link>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-2 md:gap-6 w-full sm:w-auto px-0 sm:px-0 max-w-sm sm:max-w-none mb-8 md:mb-0">

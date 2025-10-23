@@ -181,8 +181,7 @@ export default function Footer() {
           <div className="flex items-center gap-8">
             <div className="font-jetbrains font-medium text-base uppercase tracking-wide">
               HQ IN<br />
-              RED DEER,<br />
-              ALBERTA
+              CALGARY
             </div>
             <div className="border-l-2 border-cream/30 h-20"></div>
             <Image
