@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Hero() {
   const [scrollOpacity, setScrollOpacity] = useState(1);
@@ -77,28 +78,35 @@ export default function Hero() {
         </div>
 
         {/* Subheading */}
-        <p className="font-riposte text-[#C8E4DA] text-base md:text-xl lg:text-2xl max-w-2xl text-center mb-8 md:mb-12 leading-relaxed px-2">
-          Hand-crafted for your business, launched in six days. Streamlined builds. Professional presence that performs.
+        <p className="font-riposte text-[#C8E4DA] text-base md:text-xl lg:text-2xl max-w-2xl text-center mb-4 md:mb-6 leading-relaxed px-2">
+          Hand-crafted for your business, launched in 6 days. Streamlined builds. Professional presence that performs.
         </p>
+
+        <Link
+          href="/blog/website-vs-social-media"
+          className="inline-flex items-center gap-2 text-accent font-riposte text-sm mb-8 md:mb-12 hover:gap-3 transition-all"
+        >
+          Website or social media first? →
+        </Link>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-2 md:gap-6 w-full sm:w-auto px-0 sm:px-0 max-w-sm sm:max-w-none mb-8 md:mb-0">
-          <a
-            href="#work"
-            className="relative overflow-hidden border border-cream text-cream font-riposte font-bold px-6 md:px-8 py-3 md:py-2 rounded-full text-sm md:text-base tracking-wide transition-all duration-200 uppercase group text-center"
-          >
-            <span className="absolute inset-0 bg-accent transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
-            <span className="relative z-10 transition-colors duration-300">View Portfolio</span>
-          </a>
           <a
             href="#contact"
             className="relative overflow-hidden bg-accent text-cream font-riposte font-bold px-6 md:px-8 py-3 md:py-2 rounded-full text-sm md:text-base tracking-wide transition-all duration-200 uppercase flex items-center justify-center gap-2 group border border-transparent hover:border-accent"
           >
             <span className="absolute inset-0 bg-cream transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
             <span className="relative z-10 group-hover:text-accent transition-colors duration-300 flex items-center gap-2">
-              Let's Talk
+              Start Your Build
               <span className="text-lg">→</span>
             </span>
+          </a>
+          <a
+            href="#work"
+            className="relative overflow-hidden border border-cream text-cream font-riposte font-bold px-6 md:px-8 py-3 md:py-2 rounded-full text-sm md:text-base tracking-wide transition-all duration-200 uppercase group text-center"
+          >
+            <span className="absolute inset-0 bg-accent transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
+            <span className="relative z-10 transition-colors duration-300">See Work</span>
           </a>
         </div>
       </div>

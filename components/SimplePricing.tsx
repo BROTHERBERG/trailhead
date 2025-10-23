@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import CheckoutButton from "./CheckoutButton";
 import { STRIPE_PRODUCTS } from "@/lib/stripe-config";
 
@@ -10,32 +11,38 @@ export default function SimplePricing() {
     "Professional SEO & analytics setup",
     "Security, SSL & contact forms configured",
     "Two rounds of revisions included",
-    "Delivered in 6 days or less"
+    "Launched in 6 days"
   ];
 
   const maintenanceFeatures = [
-    "Hosting & SSL certificates",
-    "Two content updates per month (up to 30 min each)",
-    "Security & performance updates",
+    "Hosting, SSL & security updates",
+    "Two content updates/month (30 min each)",
     "Uptime monitoring & backups",
+    "Performance optimization",
     "Priority email support",
-    "Additional edits: $10 USD each"
+    "Additional edits: $10 each"
   ];
 
   return (
     <section className="bg-[#f5f0e9] pt-0 pb-12 md:py-20 lg:py-28">
       <div className="px-4 md:px-8 lg:px-12">
         {/* Eyebrow and Title */}
-        <div className="mb-12 md:mb-16 text-center">
+        <div className="mb-12 md:mb-16 max-w-7xl mx-auto">
           <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             PRICING
           </p>
           <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-tight mb-4">
             One Price.<br />No Hidden Fees.
           </h2>
-          <p className="font-riposte text-lg md:text-xl text-[#073742]/70 max-w-2xl mx-auto">
+          <p className="font-riposte text-lg md:text-xl text-[#073742]/70 max-w-2xl">
             Professional websites delivered fast.<br />No complexity, no upsells, no surprises.
           </p>
+          <Link
+            href="/blog/when-you-need-a-website"
+            className="inline-flex items-center gap-2 text-accent font-riposte text-base mt-4 hover:gap-3 transition-all"
+          >
+            Not sure if you need a website yet? →
+          </Link>
         </div>
 
         {/* Pricing Cards */}
@@ -50,8 +57,8 @@ export default function SimplePricing() {
             {/* Price and Badge */}
             <div className="mb-8 pb-6 border-b border-[#073742]/10">
               <div className="mb-4">
-                <h3 className="font-axel font-bold text-3xl md:text-4xl text-[#073742] uppercase">
-                  Professional Website
+                <h3 className="font-axel font-bold text-3xl md:text-4xl text-[#073742] uppercase leading-tight">
+                  One-Page Website
                 </h3>
               </div>
               <div className="flex items-baseline gap-2 mb-2">
@@ -60,8 +67,11 @@ export default function SimplePricing() {
                 </p>
                 <p className="font-riposte text-lg text-[#073742]/60">USD</p>
               </div>
-              <p className="font-riposte text-base text-[#073742]/60">
-                One-time payment • Delivered in 6 days
+              <p className="font-riposte text-base text-[#073742] font-medium mb-1">
+                + $18/mo Care & Hosting
+              </p>
+              <p className="font-riposte text-sm text-[#073742]/60">
+                One-time build • Launch in 6 days
               </p>
             </div>
 
@@ -88,7 +98,7 @@ export default function SimplePricing() {
                 productName="Professional Website"
                 className="bg-[#073742] text-cream hover:bg-[#0a4f5f] hover:shadow-xl hover:shadow-[#073742]/20"
               >
-                Get Started Today
+                Start Your Build
               </CheckoutButton>
               <p className="font-riposte text-xs text-[#073742]/60 text-center">
                 + $18 USD/mo for hosting & maintenance
@@ -104,15 +114,15 @@ export default function SimplePricing() {
             {/* Price and Badge */}
             <div className="mb-8 pb-6 border-b border-[#073742]/10">
               <div className="mb-4">
-                <h3 className="font-axel font-bold text-2xl md:text-3xl text-[#073742] uppercase">
-                  Maintenance
+                <h3 className="font-axel font-bold text-2xl md:text-3xl text-[#073742] uppercase leading-tight">
+                  Care & Hosting
                 </h3>
               </div>
               <p className="font-axel font-bold text-5xl md:text-6xl text-[#073742] mb-2">
                 $18<span className="text-2xl">/mo</span>
               </p>
-              <p className="font-riposte text-sm md:text-base text-[#073742]/60">
-                USD • Required for hosting
+              <p className="font-riposte text-sm md:text-base text-[#073742] font-medium">
+                Required for uptime, SSL, security, updates, 2 content edits/mo, backups, monitoring
               </p>
             </div>
 

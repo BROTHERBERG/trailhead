@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function WhyTrailheadDetailed() {
   const features = [
@@ -8,9 +9,10 @@ export default function WhyTrailheadDetailed() {
       icon: "/service-1.png"
     },
     {
-      title: "WEEK-LONG DELIVERY",
-      description: "Get your professional website live in days, not months of waiting",
-      icon: "/service-2.png"
+      title: "6-DAY DELIVERY",
+      description: "Get your professional website live in 6 days, not months of waiting",
+      icon: "/service-2.png",
+      link: "/blog/why-6-day-launches-win"
     },
     {
       title: "MODERN TECH STACK",
@@ -66,6 +68,14 @@ export default function WhyTrailheadDetailed() {
                   <p className="font-riposte text-[#073742] text-sm md:text-base leading-relaxed mt-2 md:mt-0">
                     {feature.description}
                   </p>
+                  {feature.link && (
+                    <Link
+                      href={feature.link}
+                      className="inline-flex items-center gap-1 text-accent font-riposte text-sm mt-2 hover:gap-2 transition-all"
+                    >
+                      Learn why →
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
