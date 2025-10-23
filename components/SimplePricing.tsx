@@ -32,7 +32,7 @@ export default function SimplePricing() {
             PRICING
           </p>
           <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-tight mb-4">
-            One Price.<br />No Hidden Fees.
+            One Price. No Hidden Fees.
           </h2>
           <p className="font-riposte text-lg md:text-xl text-[#073742]/70 max-w-2xl">
             Professional websites delivered fast.<br />No complexity, no upsells, no surprises.

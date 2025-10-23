@@ -108,7 +108,7 @@ export default function ContactForm() {
             Get Started
           </p>
           <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase mb-4 leading-[0.9] md:leading-normal">
-            Let's Build Your<br />Website
+            Let's Build Your Website
           </h2>
           <p className="font-riposte text-[#073742]/70 text-lg max-w-2xl">
             Tell us about your project and we'll get back to you within 24 hours

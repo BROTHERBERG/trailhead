@@ -31,7 +31,7 @@ export default function Testimonials() {
             CLIENT RESULTS
           </p>
           <h2 className="font-axel font-bold text-3xl md:text-4xl lg:text-5xl text-cream uppercase leading-tight">
-            Real Businesses.<br />Real Results.
+            Real Businesses. Real Results.
           </h2>
         </div>
 
