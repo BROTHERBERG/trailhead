@@ -7,40 +7,44 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "What's included in the one-page website package?",
-      answer: "Everything you need to launch: custom design, mobile optimization, SEO setup, contact forms, analytics, security/SSL, and two rounds of revisions. It's a complete, ready-to-launch website. Ongoing hosting requires our $18/mo maintenance plan."
+      question: "What's included in the $750 package?",
+      answer: "Everything you need to launch: custom design, mobile optimization, SEO setup, contact forms, analytics, security/SSL, and two rounds of revisions. It's a complete, ready-to-launch website."
+    },
+    {
+      question: "Is the $18/mo required?",
+      answer: "Yes. It covers hosting, SSL, updates, backups, monitoring, and 2 monthly content edits. Declining it voids the 6-day SLA and uptime/security coverage."
     },
     {
       question: "How long does it actually take?",
-      answer: "Most sites are delivered in 5-7 days. We start as soon as we receive your content (text, images, branding). Rush delivery available if needed."
-    },
-    {
-      question: "Do I need to provide anything?",
-      answer: "Yes—we'll need your business information, any existing branding (logo, colors), text content for your pages, and images/photos you want to use. We'll guide you through exactly what we need."
-    },
-    {
-      question: "What if I don't have content or images?",
-      answer: "No problem. We can help you source stock images and write basic copy for an additional fee, or we can work with placeholder content initially and you can update it later."
-    },
-    {
-      question: "Can I update the website myself after it's built?",
-      answer: "Sites are built for optimal performance and security. For regular content updates, our $18/mo maintenance plan includes two updates per month (up to 30 minutes each). Additional edits are $10 each. Need a CMS? We can discuss that during your kickoff call."
-    },
-    {
-      question: "What about hosting and maintenance?",
-      answer: "Ongoing hosting requires our maintenance plan at $18 USD/month (~$25 CAD). This includes hosting, SSL, two content updates per month, security updates, and priority support. No long-term contracts—cancel anytime. Without it, you'll need to host your site elsewhere."
+      answer: "Launch in 6 days. We start as soon as we receive your content (text, images, branding). Content must be delivered on Day 1 to meet the 6-day timeline."
     },
     {
       question: "What if I need changes after launch?",
-      answer: "Your package includes two rounds of revisions during the build process. After launch, the maintenance plan includes two content updates per month. Additional edits beyond that are $10 USD each, or you can request a custom quote for larger projects."
+      answer: "Your package includes two rounds of revisions during the build process. After launch, the Care & Hosting plan includes two content updates per month (30 min each). Additional edits are $10 each."
+    },
+    {
+      question: "Do I need to provide anything?",
+      answer: "Yes—we'll need your business information, any existing branding (logo, colors), text content for your pages, and images/photos you want to use. We'll guide you through exactly what we need on Day 1."
+    },
+    {
+      question: "What if I don't have content or images?",
+      answer: "We can help you source stock images and write basic copy for an additional fee, or we can work with placeholder content initially and you can update it later."
+    },
+    {
+      question: "Can I update the website myself after it's built?",
+      answer: "Sites are built for optimal performance and security. For regular content updates, our Care & Hosting plan includes two updates per month (30 min each). Need a CMS? We can discuss that during your kickoff call."
     },
     {
       question: "Will my site work on mobile phones?",
       answer: "Absolutely. Every site is mobile-first, meaning we design for phones first, then scale up. Over 60% of web traffic is mobile, so this is non-negotiable."
     },
     {
-      question: "What if I need more than one page?",
-      answer: "Our $750 package is optimized for one high-converting page. If you need additional pages (About, Services, Blog, etc.), we'll discuss scope and pricing during your kickoff call. Most businesses start with one page and add more later as they grow."
+      question: "Do you build more than one page?",
+      answer: "Yes, add-ons after launch. The one-page build is the fast path to credibility and calls. If you need additional pages (About, Services, Blog), we'll discuss scope and pricing during your kickoff call."
+    },
+    {
+      question: "What if I'm not happy with the result?",
+      answer: "You get two rounds of revisions included during the build process. We work closely with you to ensure the site meets your expectations. If we can't deliver what we promised, we'll make it right or refund your build fee."
     },
     {
       question: "What makes you different from templates or DIY builders?",
@@ -52,7 +56,7 @@ export default function FAQ() {
     <section className="bg-[#f5f0e9] py-12 md:py-20 md:pb-8 lg:py-28 lg:pb-12">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading */}
-        <div className="mb-12 md:mb-16 text-center">
+        <div className="mb-12 md:mb-16">
           <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             FAQ
           </p>

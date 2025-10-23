@@ -56,7 +56,6 @@ export async function POST(request: Request) {
       cancel_url: cancelUrl || `${process.env.NEXT_PUBLIC_SITE_URL || 'https://trailheadmade.com'}/#pricing`,
       billing_address_collection: 'required',
       allow_promotion_codes: true,
-      customer_creation: 'always',
       metadata: {
         product: 'Trailhead Professional Website',
         maintenance_included: includeMaintenance ? 'true' : 'false',

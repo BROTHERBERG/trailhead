@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { trackStartBuildClick } from "@/lib/analytics";
 
 export default function Hero() {
   const [scrollOpacity, setScrollOpacity] = useState(1);
@@ -93,6 +94,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-2 md:gap-6 w-full sm:w-auto px-0 sm:px-0 max-w-sm sm:max-w-none mb-8 md:mb-0">
           <a
             href="#contact"
+            onClick={() => trackStartBuildClick('hero')}
             className="relative overflow-hidden bg-accent text-cream font-riposte font-bold px-6 md:px-8 py-3 md:py-2 rounded-full text-sm md:text-base tracking-wide transition-all duration-200 uppercase flex items-center justify-center gap-2 group border border-transparent hover:border-accent"
           >
             <span className="absolute inset-0 bg-cream transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>

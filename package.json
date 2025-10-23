@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@stripe/stripe-js": "^8.1.0",
+    "gray-matter": "^4.0.3",
     "next": "15.0.3",
+    "next-mdx-remote": "^5.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "resend": "^6.1.3",

@@ -56,10 +56,13 @@ export default function StatsBar() {
   return (
     <section
       className="relative border-t-2 border-b-2 py-3 md:py-6 mt-0 transition-all duration-300"
-      style={{ borderColor: scrollOpacity > 0.5 ? '#073742' : '#fcf6ed' }}
+      style={{
+        borderColor: scrollOpacity > 0.5 ? '#073742' : '#fcf6ed',
+        backgroundColor: scrollOpacity > 0.5 ? '#f5f0e9' : '#073742'
+      }}
     >
       <div className="max-w-7xl mx-auto pl-8 pr-4 md:px-8 lg:px-12">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 mb-2">
           {stats.map((stat, index) => (
             <div key={index} className="flex items-center gap-2 md:gap-3">
               <h3
@@ -77,6 +80,12 @@ export default function StatsBar() {
             </div>
           ))}
         </div>
+        <p
+          className="font-riposte text-[8px] md:text-xs text-right transition-colors duration-300"
+          style={{ color: scrollOpacity > 0.5 ? 'rgba(7, 55, 66, 0.5)' : 'rgba(252, 246, 237, 0.5)' }}
+        >
+          Based on 2024 industry data
+        </p>
       </div>
     </section>
   );

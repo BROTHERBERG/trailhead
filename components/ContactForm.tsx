@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackContactSubmit } from "@/lib/analytics";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -66,6 +67,7 @@ export default function ContactForm() {
 
       if (response.ok) {
         setSubmitStatus("success");
+        trackContactSubmit('contact_form');
         setFormData({
           name: "",
           email: "",
@@ -101,15 +103,18 @@ export default function ContactForm() {
     <section id="contact" className="bg-[#f5f0e9] py-12 md:pt-8 md:pb-20 lg:pt-12 lg:pb-28">
       <div className="max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading */}
-        <div className="mb-12 text-center">
+        <div className="mb-12">
           <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             Get Started
           </p>
           <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase mb-4 leading-[0.9] md:leading-normal">
             Let's Build Your<br />Website
           </h2>
-          <p className="font-riposte text-[#073742]/70 text-lg max-w-2xl mx-auto">
+          <p className="font-riposte text-[#073742]/70 text-lg max-w-2xl">
             Tell us about your project and we'll get back to you within 24 hours
+          </p>
+          <p className="font-riposte text-[#073742]/60 text-sm mt-3">
+            Have questions first? <a href="/faq" className="text-[#073742] underline hover:text-accent transition-colors">Check our FAQ</a>
           </p>
         </div>
 
@@ -189,7 +194,7 @@ export default function ContactForm() {
               >
                 <option value="one-page">One-Page Website ($750 USD)</option>
                 <option value="multi-page">Multi-Page Website (Custom Quote)</option>
-                <option value="maintenance">Maintenance Only ($18 USD/mo)</option>
+                <option value="care-hosting">Care & Hosting Only ($18 USD/mo)</option>
                 <option value="other">Something Else</option>
               </select>
             </div>

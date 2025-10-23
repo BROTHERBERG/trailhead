@@ -15,7 +15,7 @@ export const STRIPE_PRODUCTS = {
   // Professional Website - $750 one-time
   signature: {
     name: 'Professional Website',
-    description: 'Custom one-page website delivered in 6 days or less',
+    description: 'Custom one-page website launched in 6 days',
     price: 750,
     priceId: process.env.NEXT_PUBLIC_STRIPE_BUILD_PRICE_ID || 'price_xxxxxxxxxxxxx', // Replace with your Price ID
     features: [
@@ -24,13 +24,13 @@ export const STRIPE_PRODUCTS = {
       'Professional SEO & analytics setup',
       'Security, SSL & contact forms configured',
       'Two rounds of revisions included',
-      'Delivered in 6 days or less',
+      'Launched in 6 days',
     ],
   },
 
-  // Maintenance & Hosting - $18/mo recurring
+  // Care & Hosting - $18/mo recurring
   maintenance: {
-    name: 'Maintenance & Hosting',
+    name: 'Care & Hosting',
     description: 'Required for hosting - includes updates, SSL, and support',
     price: 18,
     priceId: process.env.NEXT_PUBLIC_STRIPE_MAINTENANCE_PRICE_ID || 'price_xxxxxxxxxxxxx', // Replace with your Price ID

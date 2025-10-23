@@ -3,13 +3,20 @@
 import Image from "next/image";
 import { useState, useEffect, Fragment, useRef } from "react";
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+type NavbarProps = {
+  alwaysSolid?: boolean;
+  variant?: 'floating' | 'static';
+};
+
+export default function Navbar({ alwaysSolid = false, variant = 'floating' }: NavbarProps) {
+  const [scrolled, setScrolled] = useState(alwaysSolid);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (alwaysSolid) return; // Don't track scroll if always solid
+
     let ticking = false;
 
     const handleScroll = () => {
@@ -24,7 +31,7 @@ export default function Navbar() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [alwaysSolid]);
 
   // Handle ESC key and focus trap for mobile menu
   useEffect(() => {
@@ -84,14 +91,20 @@ export default function Navbar() {
       </a>
 
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'mx-4 md:mx-8 lg:mx-12 mt-4' : 'mx-2 md:mx-3 lg:mx-4 mt-2 md:mt-3'
-        }`}
+        className={variant === 'static'
+          ? 'relative z-50'
+          : `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+              scrolled ? 'mx-4 md:mx-8 lg:mx-12 mt-4' : 'mx-2 md:mx-3 lg:mx-4 mt-2 md:mt-3'
+            }`
+        }
       >
         <nav
-          className={`flex items-center justify-between px-2 md:px-4 lg:px-5 py-1.5 md:py-2 transition-all duration-300 ${
-            scrolled ? 'bg-[#073742] rounded-full shadow-xl' : 'bg-transparent'
-          }`}
+          className={variant === 'static'
+            ? 'flex items-center justify-between px-4 md:px-8 lg:px-12 py-4 bg-[#073742]'
+            : `flex items-center justify-between px-2 md:px-4 lg:px-5 py-1.5 md:py-2 transition-all duration-300 ${
+                scrolled ? 'bg-[#073742] rounded-full shadow-xl' : 'bg-transparent'
+              }`
+          }
           aria-label="Main navigation"
         >
         {/* Logo */}
@@ -109,22 +122,28 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 lg:gap-10">
           <a
-            href="#why"
+            href="/#why"
             className="font-riposte text-white hover:text-accent transition-colors duration-200 text-sm lg:text-base uppercase"
           >
             Why Trailhead
           </a>
           <a
-            href="#work"
+            href="/#work"
             className="font-riposte text-white hover:text-accent transition-colors duration-200 text-sm lg:text-base uppercase"
           >
             Our Work
+          </a>
+          <a
+            href="/blog"
+            className="font-riposte text-white hover:text-accent transition-colors duration-200 text-sm lg:text-base uppercase"
+          >
+            Blog
           </a>
         </div>
 
         {/* Desktop CTA Button */}
         <a
-          href="#contact"
+          href="/#contact"
           className="hidden md:flex items-center gap-2 md:gap-3 group"
         >
           <span className="font-riposte text-white text-sm lg:text-base uppercase">Contact Us</span>
@@ -171,21 +190,28 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-6">
               <a
-                href="#why"
+                href="/#why"
                 onClick={handleLinkClick}
                 className="font-riposte text-white hover:text-accent transition-colors duration-200 text-lg uppercase py-3 border-b border-white/10"
               >
                 Why Trailhead
               </a>
               <a
-                href="#work"
+                href="/#work"
                 onClick={handleLinkClick}
                 className="font-riposte text-white hover:text-accent transition-colors duration-200 text-lg uppercase py-3 border-b border-white/10"
               >
                 Our Work
               </a>
               <a
-                href="#contact"
+                href="/blog"
+                onClick={handleLinkClick}
+                className="font-riposte text-white hover:text-accent transition-colors duration-200 text-lg uppercase py-3 border-b border-white/10"
+              >
+                Blog
+              </a>
+              <a
+                href="/#contact"
                 onClick={handleLinkClick}
                 className="bg-accent text-cream font-riposte px-8 py-4 rounded-full text-base uppercase tracking-tight text-center mt-4"
               >

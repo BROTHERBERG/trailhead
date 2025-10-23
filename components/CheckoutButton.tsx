@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackCheckoutStart } from "@/lib/analytics";
 
 interface CheckoutButtonProps {
   priceId: string;
@@ -21,6 +22,9 @@ export default function CheckoutButton({
   const handleCheckout = async () => {
     setLoading(true);
     setError(null);
+
+    // Track checkout start
+    trackCheckoutStart(priceId, productName);
 
     try {
       // Create checkout session

@@ -105,8 +105,7 @@ export default function Services() {
                       alt="Web Design Illustration"
                       fill
                       className="object-contain object-bottom-right"
-                      quality={100}
-                      unoptimized
+                      quality={85}
                     />
                   </div>
                 )}
@@ -117,8 +116,7 @@ export default function Services() {
                       alt="Development Illustration"
                       fill
                       className="object-contain object-bottom-right"
-                      quality={100}
-                      unoptimized
+                      quality={85}
                     />
                   </div>
                 )}
@@ -129,8 +127,7 @@ export default function Services() {
                       alt="Branding Illustration"
                       fill
                       className="object-contain object-bottom-right"
-                      quality={100}
-                      unoptimized
+                      quality={85}
                     />
                   </div>
                 )}
@@ -141,8 +138,7 @@ export default function Services() {
                       alt="Strategy Illustration"
                       fill
                       className="object-contain object-bottom-right"
-                      quality={100}
-                      unoptimized
+                      quality={85}
                     />
                   </div>
                 )}

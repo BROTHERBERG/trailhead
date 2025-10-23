@@ -2,8 +2,8 @@ export default function ProcessTimeline() {
   const steps = [
     {
       day: "Day 1",
-      title: "Discovery Call",
-      description: "We learn about your business, goals, and vision. You share content, branding, and any must-haves."
+      title: "Discovery & Content",
+      description: "We learn about your business, goals, and vision. You deliver all content, branding, and must-haves to start the clock."
     },
     {
       day: "Days 2-3",
@@ -21,7 +21,7 @@ export default function ProcessTimeline() {
       description: "We implement your feedback, test everything across devices, and optimize performance."
     },
     {
-      day: "Day 6-7",
+      day: "Day 6",
       title: "Launch",
       description: "Final approval, domain setup, and we launch your site live. You're now open for business online."
     }
@@ -31,14 +31,14 @@ export default function ProcessTimeline() {
     <section className="bg-[#073742] py-12 md:py-20 lg:py-28">
       <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading */}
-        <div className="mb-12 md:mb-16 text-center">
+        <div className="mb-12 md:mb-16">
           <p className="font-jetbrains text-xs md:text-sm text-[#c8e3da] uppercase tracking-wider mb-4">
             Our Process
           </p>
           <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-cream uppercase mb-6 leading-[0.9] md:leading-normal">
-            From Idea To Live<br />In One Week
+            From Idea To Live<br />In 6 Days
           </h2>
-          <p className="font-riposte text-cream/80 text-lg max-w-2xl mx-auto">
+          <p className="font-riposte text-cream/80 text-lg max-w-2xl">
             A proven process that delivers professional websites without the endless revisions and delays
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function ProcessTimeline() {
             href="#contact"
             className="inline-block bg-accent text-cream font-riposte px-10 py-4 rounded-full text-base md:text-lg uppercase tracking-tight transition-all duration-300 hover:bg-[#ff9770] hover:shadow-xl"
           >
-            Start Your Project
+            Start Your Build
           </a>
         </div>
       </div>
