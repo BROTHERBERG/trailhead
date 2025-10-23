@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import FAQ from "@/components/FAQ";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions | Trailhead",
@@ -10,6 +12,8 @@ export const metadata: Metadata = {
 export default function FAQPage() {
   return (
     <div className="min-h-screen bg-[#f5f0e9]">
+      <Navbar />
+
       {/* Header */}
       <div className="bg-[#073742] py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
@@ -54,6 +58,8 @@ export default function FAQPage() {
           </a>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

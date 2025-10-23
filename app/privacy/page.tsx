@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Trailhead",
@@ -7,7 +9,9 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-[#f5f0e9] py-20 md:py-32">
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-[#f5f0e9] py-20 md:py-32">
       <div className="max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Header */}
         <div className="mb-12">
@@ -314,6 +318,8 @@ export default function PrivacyPage() {
           </a>
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }

@@ -1,3 +1,5 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,6 +9,8 @@ export const metadata: Metadata = {
 
 export default function AccessibilityPage() {
   return (
+    <>
+      <Navbar />
     <div className="min-h-screen bg-[#f5f0e9] py-20 md:py-32">
       <div className="max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
         <div className="mb-12">
@@ -137,5 +141,7 @@ export default function AccessibilityPage() {
         </div>
       </div>
     </div>
+      <Footer />
+    </>
   );
 }

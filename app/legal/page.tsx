@@ -1,3 +1,5 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -41,6 +43,8 @@ export default function LegalPage() {
   ];
 
   return (
+    <>
+      <Navbar />
     <div className="min-h-screen bg-[#f5f0e9]">
       {/* Hero Section */}
       <div className="bg-[#073742] text-cream py-20 md:py-32">
@@ -157,5 +161,7 @@ export default function LegalPage() {
         </div>
       </div>
     </div>
+      <Footer />
+    </>
   );
 }
