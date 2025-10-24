@@ -40,10 +40,10 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-cream/5 border border-cream/10 rounded-2xl p-6 md:p-8 hover:bg-cream/10 transition-all duration-300"
+              className="bg-cream/5 border border-cream/10 rounded-2xl p-6 md:p-8 hover:bg-cream/10 transition-all duration-300 flex flex-col"
             >
               {/* Quote */}
-              <div className="mb-6">
+              <div className="mb-6 flex-grow">
                 <svg
                   className="w-8 h-8 text-accent mb-4 opacity-50"
                   fill="currentColor"
@@ -57,7 +57,7 @@ export default function Testimonials() {
               </div>
 
               {/* Author */}
-              <div className="border-t border-cream/10 pt-4">
+              <div className="border-t border-cream/10 pt-4 mt-auto">
                 <p className="font-jetbrains text-sm text-cream font-medium">
                   {testimonial.author}
                 </p>

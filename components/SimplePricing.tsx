@@ -92,11 +92,11 @@ export default function SimplePricing() {
             </div>
 
             {/* CTA and Hosting Info */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 mt-auto">
               <CheckoutButton
                 priceId={STRIPE_PRODUCTS.signature.priceId}
                 productName="Professional Website"
-                className="bg-[#073742] text-cream hover:bg-[#0a4f5f] hover:shadow-xl hover:shadow-[#073742]/20"
+                className="bg-[#073742] text-cream hover:bg-[#0a4f5f] hover:shadow-xl hover:shadow-[#073742]/20 w-full px-8 py-4"
               >
                 Start Your Build
               </CheckoutButton>
@@ -110,7 +110,7 @@ export default function SimplePricing() {
           </div>
 
           {/* Maintenance Package */}
-          <div className="bg-[#fcf6ed] border border-[#d1c6bc] shadow-lg shadow-[#073742]/5 rounded-3xl p-8 md:p-10 relative">
+          <div className="bg-[#fcf6ed] border border-[#d1c6bc] shadow-lg shadow-[#073742]/5 rounded-3xl p-8 md:p-10 relative flex flex-col">
             {/* Price and Badge */}
             <div className="mb-8 pb-6 border-b border-[#073742]/10">
               <div className="mb-4">
@@ -143,10 +143,10 @@ export default function SimplePricing() {
             </div>
 
             {/* CTA and Info */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 mt-auto">
               <a
                 href="#contact"
-                className="border border-[#073742] text-[#073742] font-riposte px-8 py-3.5 rounded-full text-sm md:text-base uppercase tracking-tight transition-all duration-300 hover:bg-[#073742] hover:text-cream text-center"
+                className="border border-[#073742] text-[#073742] font-riposte px-8 py-4 rounded-full text-sm md:text-base uppercase tracking-tight transition-all duration-300 hover:bg-[#073742] hover:text-cream text-center"
               >
                 Learn More
               </a>

@@ -72,9 +72,6 @@ export default function Footer() {
           <div className="flex gap-12 md:gap-16 lg:gap-20 lg:ml-auto lg:mr-16 mt-8 md:mt-0">
             {/* Sitemap */}
             <div>
-              <h3 className="font-jetbrains text-base uppercase tracking-wider mb-3 md:mb-4 hidden md:block">
-                Sitemap
-              </h3>
               <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
                 <li>
                   <a href="/" className="font-riposte text-base hover:text-accent transition-colors">
