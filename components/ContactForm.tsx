@@ -103,14 +103,14 @@ export default function ContactForm() {
     <section id="contact" className="bg-[#f5f0e9] py-12 md:pt-8 md:pb-20 lg:pt-12 lg:pb-28">
       <div className="max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading */}
-        <div className="mb-12">
+        <div className="mb-12 text-center">
           <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             Get Started
           </p>
           <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase mb-4 leading-[0.9] md:leading-normal">
             Let's Build Your Website
           </h2>
-          <p className="font-riposte text-[#073742]/70 text-lg max-w-2xl">
+          <p className="font-riposte text-[#073742]/70 text-lg max-w-2xl mx-auto">
             Tell us about your project and we'll get back to you within 24 hours
           </p>
           <p className="font-riposte text-[#073742]/60 text-sm mt-3">
@@ -224,7 +224,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#ff6b35] text-[#073742] font-riposte px-10 py-4 rounded-full text-base md:text-lg uppercase tracking-tight transition-all duration-300 hover:bg-[#ff8555] hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed font-bold"
+              className="w-full bg-[#ff6b35] text-cream font-riposte px-10 py-4 rounded-full text-base md:text-lg uppercase tracking-tight transition-all duration-300 hover:bg-[#ff8555] hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed font-bold"
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>

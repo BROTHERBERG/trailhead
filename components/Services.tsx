@@ -60,7 +60,7 @@ export default function Services() {
             SERVICES
           </p>
           <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-tight">
-            HELPING BUSINESSES STAND OUT ONLINE WITH...
+            HELPING BUSINESSES<br />STAND OUT ONLINE WITH...
           </h2>
         </div>
       </div>

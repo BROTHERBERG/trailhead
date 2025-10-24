@@ -24,15 +24,15 @@ export default function SimplePricing() {
   ];
 
   return (
-    <section className="bg-[#f5f0e9] pt-0 pb-12 md:py-20 lg:py-28">
+    <section id="pricing" className="bg-[#f5f0e9] pt-12 pb-12 md:pt-16 md:pb-20 lg:pt-20 lg:pb-28">
       <div className="px-4 md:px-8 lg:px-12">
         {/* Eyebrow and Title */}
-        <div className="mb-12 md:mb-16 max-w-7xl mx-auto">
+        <div className="mb-10 md:mb-12">
           <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             PRICING
           </p>
           <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-tight mb-4">
-            One Price. No Hidden Fees.
+            One Price.<br />No Hidden Fees.
           </h2>
           <p className="font-riposte text-lg md:text-xl text-[#073742]/70 max-w-2xl">
             Professional websites delivered fast.<br />No complexity, no upsells, no surprises.
@@ -46,7 +46,7 @@ export default function SimplePricing() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Website Package */}
           <div className="bg-[#fff7f0] border-2 border-[#073742] shadow-xl shadow-[#073742]/10 rounded-3xl p-8 md:p-10 relative">
             {/* Top Badge */}

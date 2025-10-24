@@ -8,15 +8,15 @@ export default async function BlogPreview() {
   if (latestPosts.length === 0) return null;
 
   return (
-    <section className="py-16 md:py-20 lg:py-24 px-6 md:px-10 lg:px-14 bg-[#f5f0e9]">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 md:py-20 lg:py-24 px-4 md:px-8 lg:px-12 bg-[#f5f0e9]">
+      <div>
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12">
           <div>
-            <p className="font-jetbrains text-xs md:text-sm uppercase tracking-wider text-accent mb-3">
+            <p className="font-jetbrains text-xs md:text-sm uppercase tracking-wider text-accent mb-4">
               From the Blog
             </p>
-            <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-tight">
+            <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-tight">
               LATEST INSIGHTS
             </h2>
           </div>
