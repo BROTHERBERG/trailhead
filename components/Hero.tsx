@@ -79,7 +79,8 @@ export default function Hero() {
 
         {/* Subheading */}
         <p className="font-riposte text-[#C8E4DA] text-base md:text-xl lg:text-2xl max-w-2xl text-center mb-8 md:mb-12 leading-relaxed px-2">
-          Hand-crafted for your business, launched in 6 days. Streamlined builds. Professional presence that performs.
+          Hand-crafted for your business. Launch in 6 days.<br />
+          Fast builds. Clean design. Real results.
         </p>
 
         {/* CTA Buttons */}

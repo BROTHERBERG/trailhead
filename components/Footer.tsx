@@ -235,8 +235,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="font-jetbrains font-medium text-[10px] md:text-sm text-cream/80 order-3 md:order-1">
-            © 2025 Trailheadmade.com<br />
-            A Crush Digital Atelier LLC Company
+            © 2025 Trailheadmade.com<span className="md:hidden"><br /></span><span className="hidden md:inline"> · </span>A Crush Digital Atelier LLC Company
           </div>
         </div>
       </div>
