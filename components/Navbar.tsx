@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect, Fragment, useRef } from "react";
+import { trackStartBuildClick } from "@/lib/analytics";
 
 type NavbarProps = {
   alwaysSolid?: boolean;
@@ -145,6 +146,7 @@ export default function Navbar({ alwaysSolid = false, variant = 'floating' }: Na
         <a
           href="/#contact"
           className="hidden md:flex items-center gap-2 md:gap-3 group"
+          onClick={() => trackStartBuildClick("navbar")}
         >
           <span className="font-riposte text-white text-sm lg:text-base uppercase">Contact Us</span>
           <div className="w-8 h-8 md:w-10 md:h-10 bg-accent rounded-full flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
@@ -212,7 +214,10 @@ export default function Navbar({ alwaysSolid = false, variant = 'floating' }: Na
               </a>
               <a
                 href="/#contact"
-                onClick={handleLinkClick}
+                onClick={(event) => {
+                  handleLinkClick();
+                  trackStartBuildClick("navbar-mobile");
+                }}
                 className="bg-accent text-cream font-riposte px-8 py-4 rounded-full text-base uppercase tracking-tight text-center mt-4"
               >
                 Contact Us

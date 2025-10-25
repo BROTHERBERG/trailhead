@@ -44,7 +44,7 @@ export default function LegalPage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar variant="static" />
     <div className="min-h-screen bg-[#f5f0e9]">
       {/* Hero Section */}
       <div className="bg-[#073742] text-cream py-20 md:py-32">

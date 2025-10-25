@@ -1,55 +1,52 @@
-// GA4 Event Tracking Utilities
+"use client";
 
-declare global {
-  interface Window {
-    gtag?: (command: string, ...args: any[]) => void;
-  }
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "";
+
+type EventParams = Record<string, unknown> & {
+  category?: string;
+  label?: string;
+  value?: number;
+};
+
+function sendEvent(action: string, params: EventParams = {}) {
+  if (!GA_MEASUREMENT_ID) return;
+  if (typeof window === "undefined") return;
+  const gtag = (window as typeof window & { gtag?: (...args: any[]) => void }).gtag;
+  if (!gtag) return;
+  gtag("event", action, params);
 }
 
-export const trackEvent = (eventName: string, params?: Record<string, any>) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', eventName, params);
-  }
-};
+export function trackEvent(action: string, params: EventParams = {}) {
+  sendEvent(action, params);
+}
 
-// Conversion Events
-export const trackStartBuildClick = (location: string) => {
-  trackEvent('start_build_click', {
-    event_category: 'engagement',
-    event_label: location,
-    value: 1,
-  });
-};
-
-export const trackContactSubmit = (formName: string = 'contact_form') => {
-  trackEvent('contact_form_submit', {
-    event_category: 'conversion',
-    event_label: formName,
-    value: 10,
-  });
-};
-
-export const trackCheckoutStart = (priceId: string, plan: string) => {
-  trackEvent('begin_checkout', {
-    event_category: 'ecommerce',
-    event_label: plan,
+export function trackCheckoutStart(priceId: string, productName: string) {
+  sendEvent("begin_checkout", {
+    category: "ecommerce",
+    label: productName,
+    value: 750,
     price_id: priceId,
-    value: 750, // base price
   });
-};
+}
 
-export const trackBlogPostView = (slug: string, title: string) => {
-  trackEvent('blog_post_view', {
-    event_category: 'content',
-    event_label: title,
-    page_path: `/blog/${slug}`,
+export function trackCtaClick(location: string, label: string) {
+  sendEvent("cta_click", {
+    category: "engagement",
+    label: `${location} – ${label}`,
   });
-};
+}
 
-export const trackInternalLinkClick = (destination: string, source: string) => {
-  trackEvent('internal_link_click', {
-    event_category: 'navigation',
-    event_label: `${source} -> ${destination}`,
-    destination_url: destination,
+export function trackStartBuildClick(location: string) {
+  trackCtaClick(location, "Start Your Build");
+}
+
+export function trackFormSubmission(formName: string) {
+  sendEvent("form_submit", {
+    category: "engagement",
+    label: formName,
   });
-};
+}
+
+export function trackContactSubmit(formName: string) {
+  trackFormSubmission(formName);
+}

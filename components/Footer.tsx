@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useRef } from "react";
+import { trackStartBuildClick } from "@/lib/analytics";
 
 export default function Footer() {
   const [wobble, setWobble] = useState<string>("");
@@ -61,6 +62,7 @@ export default function Footer() {
                 ref={buttonRef}
                 onMouseEnter={handleMouseEnter}
                 onAnimationEnd={handleAnimationEnd}
+                onClick={() => trackStartBuildClick("footer")}
                 className={`border border-cream text-cream font-riposte px-8 py-3 rounded-full text-base uppercase tracking-wide transition-all duration-200 hover:bg-accent hover:border-accent w-fit ${wobble}`}
               >
                 Start Your Build
@@ -72,19 +74,19 @@ export default function Footer() {
           <div className="flex gap-12 md:gap-16 lg:gap-20 lg:ml-auto lg:mr-16 mt-8 md:mt-0">
             {/* Sitemap */}
             <div>
-              <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
+              <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-8 gap-y-3">
                 <li>
                   <a href="/" className="font-riposte text-base hover:text-accent transition-colors">
                     HOME
                   </a>
                 </li>
                 <li>
-                  <a href="#why" className="font-riposte text-base hover:text-accent transition-colors">
+                  <a href="/#why" className="font-riposte text-base hover:text-accent transition-colors">
                     WHY TRAILHEAD
                   </a>
                 </li>
                 <li>
-                  <a href="#work" className="font-riposte text-base hover:text-accent transition-colors">
+                  <a href="/#work" className="font-riposte text-base hover:text-accent transition-colors">
                     OUR WORK
                   </a>
                 </li>
@@ -99,7 +101,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="font-riposte text-base hover:text-accent transition-colors">
+                  <a href="/#contact" className="font-riposte text-base hover:text-accent transition-colors">
                     CONTACT
                   </a>
                 </li>
@@ -211,29 +213,30 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           {/* Legal Links */}
           <div className="flex flex-wrap gap-x-6 gap-y-2 order-2 md:order-2">
-            <a href="/privacy" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+            <a href="/privacy" className="font-riposte text-sm text-cream/80 hover:text-accent transition-colors">
               Privacy
             </a>
-            <a href="/terms" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+            <a href="/terms" className="font-riposte text-sm text-cream/80 hover:text-accent transition-colors">
               Terms
             </a>
-            <a href="/refund-policy" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+            <a href="/refund-policy" className="font-riposte text-sm text-cream/80 hover:text-accent transition-colors">
               Refunds
             </a>
-            <a href="/cookies" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+            <a href="/cookies" className="font-riposte text-sm text-cream/80 hover:text-accent transition-colors">
               Cookies
             </a>
-            <a href="/accessibility" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+            <a href="/accessibility" className="font-riposte text-sm text-cream/80 hover:text-accent transition-colors">
               Accessibility
             </a>
-            <a href="/legal" className="font-riposte text-sm text-cream/70 hover:text-accent transition-colors">
+            <a href="/legal" className="font-riposte text-sm text-cream/80 hover:text-accent transition-colors">
               Legal
             </a>
           </div>
 
           {/* Copyright */}
           <div className="font-jetbrains font-medium text-[10px] md:text-sm text-cream/80 order-3 md:order-1">
-            © 2025 Trailheadmade.com · A Crush Digital Atelier LLC Company
+            © 2025 Trailheadmade.com<br />
+            A Crush Digital Atelier LLC Company
           </div>
         </div>
       </div>

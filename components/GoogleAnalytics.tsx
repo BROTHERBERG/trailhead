@@ -4,7 +4,9 @@ import Script from 'next/script';
 import { useEffect } from 'react';
 
 export default function GoogleAnalytics() {
-  const measurementId = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || 'G-KBP3LGE8ZQ';
+  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
+  if (!measurementId) return null;
 
   useEffect(() => {
     // Check if user has consented to analytics cookies

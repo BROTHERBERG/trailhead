@@ -62,27 +62,27 @@ export default function Services() {
           <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-tight">
             HELPING BUSINESSES<br />STAND OUT ONLINE WITH...
           </h2>
+          <p className="font-riposte text-lg text-[#073742]/80 mt-6 max-w-3xl">
+            Not sure which service you need first? Our latest guide <a href="/blog/when-you-need-a-website" className="text-accent underline hover:no-underline">“How to Know When You Actually Need a Website”</a> breaks down the decision step-by-step.
+          </p>
         </div>
       </div>
 
-      {/* Services Grid - Stacked Cards */}
+      {/* Services Grid - Horizontal Scroll */}
       <div className="overflow-x-auto pl-4 md:pl-8 lg:pl-12">
-        <div className="relative h-[360px] md:h-[480px]">
+        <div className="flex gap-3 md:gap-6 h-[360px] md:h-[480px] pb-4">
           {services.map((service, index) => {
-            const cardWidth = typeof window !== 'undefined' && window.innerWidth < 768 ? 280 : 395;
-            const gap = typeof window !== 'undefined' && window.innerWidth < 768 ? 12 : 24;
             const initialOffset = index * 30; // Small offset when stacked
-            const finalPosition = index * (cardWidth + gap);
+            const finalPosition = 0; // No horizontal offset for scrolling
             const currentPosition = isVisible ? finalPosition : initialOffset;
 
             return (
               <div
                 key={index}
-                className="absolute rounded-2xl p-6 md:p-8 w-[280px] md:w-[395px] h-[340px] md:h-[460px] flex flex-col items-start group overflow-hidden"
+                className="flex-shrink-0 rounded-2xl p-6 md:p-8 w-[280px] md:w-[395px] h-[340px] md:h-[460px] flex flex-col items-start group overflow-hidden"
                 style={{
                   backgroundColor: service.color,
-                  transform: `translateX(${currentPosition}px)`,
-                  zIndex: services.length - index,
+                  transform: `translateY(${currentPosition}px)`,
                   transition: `transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) ${index * 0.1}s`,
                   willChange: isVisible ? 'auto' : 'transform'
                 }}

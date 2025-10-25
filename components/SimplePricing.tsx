@@ -16,7 +16,7 @@ export default function SimplePricing() {
 
   const maintenanceFeatures = [
     "Hosting, SSL & security updates",
-    "Two content updates/month (30 min each)",
+    { text: "Two content updates/month (30 min each)", breakBefore: "2" },
     "Uptime monitoring & backups",
     "Performance optimization",
     "Priority email support",
@@ -24,7 +24,7 @@ export default function SimplePricing() {
   ];
 
   return (
-    <section id="pricing" className="bg-[#f5f0e9] pt-12 pb-12 md:pt-16 md:pb-20 lg:pt-20 lg:pb-28">
+    <section id="pricing" className="bg-[#f5f0e9] pt-8 pb-12 md:pt-12 md:pb-20 lg:pt-16 lg:pb-28">
       <div className="px-4 md:px-8 lg:px-12">
         {/* Eyebrow and Title */}
         <div className="mb-10 md:mb-12">
@@ -103,9 +103,6 @@ export default function SimplePricing() {
               <p className="font-riposte text-xs text-[#073742]/60 text-center">
                 + $18 USD/mo for hosting & maintenance
               </p>
-              <p className="font-riposte text-xs text-accent text-center font-medium">
-                Need more pages? We'll discuss during your kickoff call.
-              </p>
             </div>
           </div>
 
@@ -127,19 +124,29 @@ export default function SimplePricing() {
             </div>
 
             {/* Features List */}
-            <div className="space-y-3 mb-8">
-              {maintenanceFeatures.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#073742] flex items-center justify-center shrink-0 mt-0.5">
-                    <svg className="w-3 h-3 text-cream" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
+            <div className="space-y-3 mb-4">
+              {maintenanceFeatures.map((feature, index) => {
+                const isObject = typeof feature === 'object';
+                const text = isObject ? feature.text : feature;
+                const breakBefore = isObject ? feature.breakBefore : null;
+
+                return (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-[#073742] flex items-center justify-center shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 text-cream" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="font-riposte text-sm md:text-base text-[#073742] leading-relaxed">
+                      {breakBefore ? (
+                        <>
+                          Two content updates/month<br className="hidden md:block" /> (30 min each)
+                        </>
+                      ) : text}
+                    </span>
                   </div>
-                  <span className="font-riposte text-sm md:text-base text-[#073742] leading-relaxed">
-                    {feature}
-                  </span>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* CTA and Info */}

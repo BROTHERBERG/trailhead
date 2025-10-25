@@ -1,11 +1,13 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getPost, getAllPosts } from "@/lib/blog";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlogTableOfContents from "@/components/BlogTableOfContents";
 import BlogProgressBar from "@/components/BlogProgressBar";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import "../blog-prose.css";
 
 type Props = {
@@ -160,11 +162,16 @@ export default async function BlogPost({ params }: Props) {
                 <div className="bg-[#fefdf9] border-2 border-[#073742]/10 rounded-2xl p-6 md:p-8 lg:p-10">
                   {/* Hero Image */}
                   {meta.heroImage && (
-                    <img
-                      src={meta.heroImage}
-                      alt={meta.title}
-                      className="w-full rounded-xl mb-8"
-                    />
+                    <div className="relative w-full aspect-video mb-8">
+                      <Image
+                        src={meta.heroImage}
+                        alt={meta.title}
+                        fill
+                        className="rounded-xl object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 66vw, 800px"
+                        priority
+                      />
+                    </div>
                   )}
 
                   {/* Blog Content */}
@@ -271,20 +278,7 @@ export default async function BlogPost({ params }: Props) {
                 )}
 
                 {/* Newsletter Signup */}
-                <div className="bg-[#c8e3da]/30 border-2 border-[#073742]/10 rounded-2xl p-6">
-                  <h3 className="font-jetbrains text-sm uppercase text-[#073742] tracking-wider mb-3">
-                    Weekly Insights
-                  </h3>
-                  <p className="font-riposte text-sm text-[#073742]/80 mb-4">
-                    Tips on fast launches, SEO, and running a digital business. One email per week.
-                  </p>
-                  <a
-                    href="/#contact"
-                    className="block text-center bg-[#073742] text-cream font-riposte font-bold px-6 py-3 rounded-full text-sm tracking-wide transition-all duration-200 uppercase hover:bg-[#073742]/90"
-                  >
-                    Subscribe
-                  </a>
-                </div>
+                <NewsletterSignup variant="sidebar" />
 
               </aside>
             </div>

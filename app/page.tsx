@@ -24,7 +24,7 @@ export default function Home() {
     "email": "hello@trailheadmade.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Red Deer",
+      "addressLocality": "Calgary",
       "addressRegion": "AB",
       "addressCountry": "CA"
     },

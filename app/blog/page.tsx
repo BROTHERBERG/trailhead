@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts } from "@/lib/blog";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -62,11 +63,14 @@ export default async function BlogIndex() {
                       <div className="flex flex-col md:flex-row md:items-start gap-6">
                         {/* Hero Image */}
                         {post.heroImage && (
-                          <div className="md:w-48 md:shrink-0">
-                            <img
+                          <div className="relative md:w-48 md:shrink-0 aspect-video md:aspect-[4/3] rounded-xl overflow-hidden border border-[#073742]/10">
+                            <Image
                               src={post.heroImage}
                               alt={post.title}
-                              className="w-full h-48 md:h-32 object-cover rounded-xl border border-[#073742]/10"
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 25vw"
+                              priority={false}
                             />
                           </div>
                         )}

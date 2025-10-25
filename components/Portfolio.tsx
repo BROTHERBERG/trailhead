@@ -61,30 +61,28 @@ export default function Portfolio() {
       </div>
 
       {/* Portfolio Cards - Two Rows */}
-      <div className="overflow-x-auto pl-4 md:pl-8 lg:px-12 space-y-3 md:space-y-6">
+      <div className="space-y-3 md:space-y-6">
         {/* Row 1 */}
-        <div className="relative h-[480px] pt-4">
-          {row1.map((project, index) => {
-            const cardWidth = typeof window !== 'undefined' && window.innerWidth < 768 ? 300 : 360;
-            const gap = 24;
-            const initialOffset = index * 30;
-            const finalPosition = index * (cardWidth + gap);
-            const currentPosition = isVisible ? finalPosition : initialOffset;
+        <div className="overflow-x-auto pl-4 md:pl-8 lg:px-12">
+          <div className="flex gap-6 h-[480px] pt-4 pb-4">
+            {row1.map((project, index) => {
+              const initialOffset = index * 30;
+              const finalPosition = 0; // No horizontal offset for scrolling
+              const currentPosition = isVisible ? finalPosition : initialOffset;
 
-            return (
-              <button
-                key={index}
-                type="button"
-                className="absolute group cursor-pointer text-left"
-                style={{
-                  transform: `translateX(${currentPosition}px)`,
-                  zIndex: row1.length - index,
-                  transition: `transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) ${index * 0.08}s`,
-                  willChange: isVisible ? 'auto' : 'transform'
-                }}
-                onClick={() => setSelectedProject(index)}
-                aria-label={`View ${project.businessType} project details`}
-              >
+              return (
+                <button
+                  key={index}
+                  type="button"
+                  className="flex-shrink-0 group cursor-pointer text-left"
+                  style={{
+                    transform: `translateY(${currentPosition}px)`,
+                    transition: `transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) ${index * 0.08}s`,
+                    willChange: isVisible ? 'auto' : 'transform'
+                  }}
+                  onClick={() => setSelectedProject(index)}
+                  aria-label={`View ${project.businessType} project details`}
+                >
                 {/* Screenshot */}
                 <div className="bg-cream border-2 border-[#073742] rounded-lg overflow-hidden mb-3 w-[300px] md:w-[360px] h-[450px] relative shadow-lg group-hover:-translate-y-2 transition-all duration-300">
                   {/* Skeleton Loader */}
@@ -105,32 +103,31 @@ export default function Portfolio() {
               </button>
             );
           })}
+          </div>
         </div>
 
         {/* Row 2 */}
-        <div className="relative h-[480px] pt-4">
-          {row2.map((project, index) => {
-            const cardWidth = typeof window !== 'undefined' && window.innerWidth < 768 ? 300 : 360;
-            const gap = 24;
-            const initialOffset = index * 30;
-            const finalPosition = index * (cardWidth + gap);
-            const currentPosition = isVisible ? finalPosition : initialOffset;
-            const projectIndex = row1.length + index;
+        <div className="overflow-x-auto pl-4 md:pl-8 lg:px-12">
+          <div className="flex gap-6 h-[480px] pt-4 pb-4">
+            {row2.map((project, index) => {
+              const initialOffset = index * 30;
+              const finalPosition = 0; // No horizontal offset for scrolling
+              const currentPosition = isVisible ? finalPosition : initialOffset;
+              const projectIndex = row1.length + index;
 
-            return (
-              <button
-                key={index}
-                type="button"
-                className="absolute group cursor-pointer text-left"
-                style={{
-                  transform: `translateX(${currentPosition}px)`,
-                  zIndex: row2.length - index,
-                  transition: `transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) ${index * 0.08}s`,
-                  willChange: isVisible ? 'auto' : 'transform'
-                }}
-                onClick={() => setSelectedProject(projectIndex)}
-                aria-label={`View ${project.businessType} project details`}
-              >
+              return (
+                <button
+                  key={index}
+                  type="button"
+                  className="flex-shrink-0 group cursor-pointer text-left"
+                  style={{
+                    transform: `translateY(${currentPosition}px)`,
+                    transition: `transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) ${index * 0.08}s`,
+                    willChange: isVisible ? 'auto' : 'transform'
+                  }}
+                  onClick={() => setSelectedProject(projectIndex)}
+                  aria-label={`View ${project.businessType} project details`}
+                >
                 {/* Screenshot */}
                 <div className="bg-cream border-2 border-[#073742] rounded-lg overflow-hidden mb-3 w-[300px] md:w-[360px] h-[450px] relative shadow-lg group-hover:-translate-y-2 transition-all duration-300">
                   {/* Skeleton Loader */}
@@ -151,6 +148,7 @@ export default function Portfolio() {
               </button>
             );
           })}
+          </div>
         </div>
       </div>
 

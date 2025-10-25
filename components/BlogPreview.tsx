@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts } from "@/lib/blog";
 
 export default async function BlogPreview() {
@@ -38,11 +39,13 @@ export default async function BlogPreview() {
             >
               {/* Hero Image */}
               {post.heroImage && (
-                <div className="aspect-video overflow-hidden bg-[#073742]">
-                  <img
+                <div className="relative aspect-video overflow-hidden bg-[#073742]">
+                  <Image
                     src={post.heroImage}
                     alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
               )}

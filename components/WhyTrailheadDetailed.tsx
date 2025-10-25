@@ -35,7 +35,7 @@ export default function WhyTrailheadDetailed() {
             <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
               WHY TRAILHEAD
             </p>
-            <h2 className="font-axel font-bold text-[2.5rem] md:text-5xl lg:text-6xl text-[#073742] leading-tight">
+            <h2 className="font-axel font-bold text-[2.5rem] md:text-5xl lg:text-6xl text-[#073742] leading-[0.85]">
               <span className="md:hidden">WHAT MAKES US UNIQUE, MAKES YOUR BRAND UNIQUE</span>
               <span className="hidden md:inline">WHAT MAKES US<br />UNIQUE, MAKES YOUR<br />BRAND UNIQUE</span>
             </h2>

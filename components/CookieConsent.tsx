@@ -35,13 +35,9 @@ export default function CookieConsent() {
     setShowSettings(false);
 
     // Apply preferences
-    const measurementId = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || 'G-KBP3LGE8ZQ';
-    if (!prefs.analytics) {
-      // Disable Google Analytics
-      (window as any)[`ga-disable-${measurementId}`] = true;
-    } else {
-      // Re-enable if it was previously disabled
-      (window as any)[`ga-disable-${measurementId}`] = false;
+    const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+    if (measurementId) {
+      (window as any)[`ga-disable-${measurementId}`] = !prefs.analytics;
     }
 
     // Reload to ensure tracking state is applied
