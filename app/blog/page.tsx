@@ -8,6 +8,9 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Blog | Trailhead",
   description: "Guides on fast website launches, design, SEO, and running a cross-border digital business.",
+  alternates: {
+    canonical: 'https://trailheadmade.com/blog',
+  },
 };
 
 export default async function BlogIndex() {

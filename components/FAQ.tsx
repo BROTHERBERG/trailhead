@@ -12,11 +12,11 @@ export default function FAQ() {
     },
     {
       question: "Is the $18/mo required?",
-      answer: "Yes. It covers hosting, SSL, updates, backups, monitoring, and 2 monthly content edits. Declining it voids the 6-day SLA and uptime/security coverage."
+      answer: "Yes. It covers hosting, SSL, updates, backups, monitoring, and 2 monthly content edits. Declining it voids the one-week SLA and uptime/security coverage."
     },
     {
       question: "How long does it actually take?",
-      answer: "Launch in 6 days. We start as soon as we receive your content (text, images, branding). Content must be delivered on Day 1 to meet the 6-day timeline."
+      answer: "Launch in one week (6 business days). We start as soon as we receive your content (text, images, branding). Content must be delivered on Day 1 to meet the timeline."
     },
     {
       question: "What if I need changes after launch?",

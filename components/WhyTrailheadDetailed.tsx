@@ -9,8 +9,8 @@ export default function WhyTrailheadDetailed() {
       icon: "/service-1.png"
     },
     {
-      title: "6-DAY DELIVERY",
-      description: "Get your professional website live in 6 days, not months of waiting",
+      title: "ONE-WEEK DELIVERY",
+      description: "Get your professional website live in one week, not months of waiting",
       icon: "/service-2.png",
       link: "/blog/why-6-day-launches-win"
     },

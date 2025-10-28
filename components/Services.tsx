@@ -62,9 +62,6 @@ export default function Services() {
           <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-tight">
             HELPING BUSINESSES<br />STAND OUT ONLINE WITH...
           </h2>
-          <p className="font-riposte text-lg text-[#073742]/80 mt-6 max-w-3xl">
-            Not sure which service you need first? Our latest guide <a href="/blog/when-you-need-a-website" className="text-accent underline hover:no-underline">“How to Know When You Actually Need a Website”</a> breaks down the decision step-by-step.
-          </p>
         </div>
       </div>
 

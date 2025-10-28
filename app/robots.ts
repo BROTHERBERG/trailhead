@@ -13,7 +13,13 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/create-checkout-session', '/_next/'],
+        disallow: [
+          '/api/',
+          '/_next/',
+          '/email-preview',
+          '/segment-thank-you',
+          '/success',
+        ],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

@@ -6,6 +6,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Legal Information | Trailhead",
   description: "Legal policies and terms for Trailheadmade.com - Privacy, Terms of Service, Refunds, and more.",
+  alternates: {
+    canonical: 'https://trailheadmade.com/legal',
+  },
 };
 
 export default function LegalPage() {

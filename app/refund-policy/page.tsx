@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Refund Policy | Trailhead",
   description: "Client Satisfaction & Refund Policy for Trailheadmade.com - Our commitment to delivering quality and handling refunds fairly.",
+  alternates: {
+    canonical: 'https://trailheadmade.com/refund-policy',
+  },
 };
 
 export default function RefundPolicyPage() {

@@ -34,6 +34,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.meta.title} | Trailhead Blog`,
     description: post.meta.excerpt,
+    alternates: {
+      canonical: `https://trailheadmade.com/blog/${slug}`,
+    },
     openGraph: {
       title: post.meta.title,
       description: post.meta.excerpt,

@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Accessibility Statement | Trailhead",
   description: "Trailhead's commitment to web accessibility and WCAG 2.1 compliance.",
+  alternates: {
+    canonical: 'https://trailheadmade.com/accessibility',
+  },
 };
 
 export default function AccessibilityPage() {

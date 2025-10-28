@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service | Trailhead",
   description: "Terms of Service for Trailheadmade.com - Legal terms governing the use of our website design and hosting services.",
+  alternates: {
+    canonical: 'https://trailheadmade.com/terms',
+  },
 };
 
 export default function TermsPage() {

@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Cookie Policy | Trailhead",
   description: "Cookie Policy for Trailheadmade.com - How we use cookies and tracking technologies.",
+  alternates: {
+    canonical: 'https://trailheadmade.com/cookies',
+  },
 };
 
 export default function CookiesPage() {

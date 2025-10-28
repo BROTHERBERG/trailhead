@@ -18,7 +18,7 @@ export default function Home() {
     "@type": "LocalBusiness",
     "name": "Trailhead",
     "legalName": "Crush Digital Atelier LLC",
-    "description": "Custom website design and development in 6 days. Mobile-first, SEO-optimized, professional websites for small businesses.",
+    "description": "Professional custom website design and development in one week. Mobile-first, SEO-optimized websites for small businesses in Calgary and beyond.",
     "url": "https://trailheadmade.com",
     "telephone": "+1-403-404-0014",
     "email": "hello@trailheadmade.com",
@@ -31,17 +31,29 @@ export default function Home() {
     "priceRange": "$750+",
     "offers": {
       "@type": "Offer",
-      "name": "6-Day Website Launch",
-      "description": "One-page custom site launched in 6 days. Mobile-first, baseline SEO, analytics, SSL, contact form.",
+      "name": "One-Week Website Launch",
+      "description": "One-page custom website launched in one week (6 business days). Hand-coded, mobile-first, SEO-ready, analytics, SSL, contact form.",
       "price": "750",
       "priceCurrency": "USD"
     },
-    "areaServed": {
-      "@type": "Country",
-      "name": "United States"
-    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Calgary",
+        "containedIn": {
+          "@type": "State",
+          "name": "Alberta"
+        }
+      },
+      {
+        "@type": "Country",
+        "name": "Canada"
+      }
+    ],
     "sameAs": [
-      "https://crushhh.co"
+      "https://crushhh.co",
+      "https://github.com/crushdigitalatelier",
+      "https://www.linkedin.com/company/trailhead-made"
     ]
   };
 

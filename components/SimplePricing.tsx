@@ -11,7 +11,7 @@ export default function SimplePricing() {
     "Professional SEO & analytics setup",
     "Security, SSL & contact forms configured",
     "Two rounds of revisions included",
-    "Launched in 6 days"
+    "Launched in one week"
   ];
 
   const maintenanceFeatures = [
@@ -31,18 +31,9 @@ export default function SimplePricing() {
           <p className="font-jetbrains text-xs md:text-sm text-[#073742] uppercase tracking-wider mb-4">
             PRICING
           </p>
-          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-tight mb-4">
+          <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-[#073742] uppercase leading-[0.9] md:leading-tight">
             One Price.<br />No Hidden Fees.
           </h2>
-          <p className="font-riposte text-lg md:text-xl text-[#073742]/70 max-w-2xl">
-            Professional websites delivered fast.<br />No complexity, no upsells, no surprises.
-          </p>
-          <Link
-            href="/blog/when-you-need-a-website"
-            className="inline-flex items-center gap-2 text-accent font-riposte text-base mt-4 hover:gap-3 transition-all"
-          >
-            Not sure if you need a website yet? →
-          </Link>
         </div>
 
         {/* Pricing Cards */}
@@ -71,7 +62,7 @@ export default function SimplePricing() {
                 + $18/mo Care & Hosting
               </p>
               <p className="font-riposte text-sm text-[#073742]/60">
-                One-time build • Launch in 6 days
+                One-time build • Launch in one week
               </p>
             </div>
 

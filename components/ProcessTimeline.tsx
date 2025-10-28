@@ -36,10 +36,10 @@ export default function ProcessTimeline() {
             Our Process
           </p>
           <h2 className="font-axel font-bold text-4xl md:text-5xl lg:text-6xl text-cream uppercase mb-6 leading-[0.9] md:leading-normal">
-            From Idea To Live<br />In 6 Days
+            From Idea To Live<br />In One Week
           </h2>
           <p className="font-riposte text-cream/80 text-lg max-w-2xl">
-            A proven process that delivers professional websites without the endless revisions and delays
+            A proven 6-day process that delivers professional websites without the endless revisions and delays
           </p>
         </div>
 

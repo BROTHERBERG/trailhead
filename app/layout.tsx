@@ -34,26 +34,29 @@ const riposte = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Trailhead | Custom Websites Delivered in 6 Days",
-  description: "Hand-crafted for your business, launched in six days. Streamlined builds. Professional presence that performs. One-page websites starting at $750 USD.",
-  keywords: ["web design", "website development", "small business websites", "one-page websites", "fast website delivery", "affordable web design"],
+  title: "Affordable Custom Websites Calgary | Fast Launch in One Week | Trailhead",
+  description: "Professional custom websites for small businesses. Hand-coded, SEO-ready, launched in one week. Starting at $750. No templates, no surprises.",
+  keywords: ["affordable custom website", "professional website under $1000", "small business website designer", "fast custom website design", "website in a week", "Calgary web design", "affordable web design Calgary", "custom website Calgary"],
   authors: [{ name: "Trailhead" }],
   icons: {
     icon: "/cone-180.png",
     apple: "/cone-180.png",
   },
   metadataBase: new URL('https://trailheadmade.com'),
+  alternates: {
+    canonical: 'https://trailheadmade.com',
+  },
   openGraph: {
-    title: "Trailhead | Custom Websites Delivered in 6 Days",
-    description: "Hand-crafted for your business, launched in six days. Professional presence that performs. Starting at $750 USD.",
+    title: "Affordable Custom Websites Calgary | Launched in One Week",
+    description: "Professional custom websites for small businesses. Hand-coded, SEO-ready, launched in one week. Starting at $750.",
     url: "https://trailheadmade.com",
     siteName: "Trailhead",
     images: [
       {
-        url: "/og-image.png", // We'll need to create this
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Trailhead - Custom Websites Delivered in 6 Days",
+        alt: "Trailhead - Affordable Custom Websites Launched in One Week",
       },
     ],
     type: "website",
@@ -61,8 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trailhead | Custom Websites Delivered in 6 Days",
-    description: "Hand-crafted for your business, launched in six days. Professional presence that performs. Starting at $750 USD.",
+    title: "Affordable Custom Websites Calgary | Launched in One Week",
+    description: "Professional custom websites for small businesses. Hand-coded, SEO-ready, launched in one week. Starting at $750.",
     images: ["/og-image.png"],
   },
 };

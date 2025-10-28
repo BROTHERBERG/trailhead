@@ -5,6 +5,9 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Privacy Policy | Trailhead",
   description: "Privacy policy for Trailheadmade.com - How we collect, use, and protect your personal information.",
+  alternates: {
+    canonical: 'https://trailheadmade.com/privacy',
+  },
 };
 
 export default function PrivacyPage() {

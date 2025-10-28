@@ -3,22 +3,22 @@
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "Launch in 6 days, calls the same week. We booked 3 new jobs.",
-      author: "Sarah M.",
-      role: "Owner, Red Deer Roofing",
-      location: "Red Deer, AB"
-    },
-    {
-      quote: "Went from zero online presence to ranking page one in 3 weeks. Phone hasn't stopped ringing.",
-      author: "Marcus T.",
-      role: "Landscaping Services",
+      quote: "Had a quote booked within 24 hours of going live. The site looks professional, loads fast, and I can actually update my own content. Worth every penny.",
+      author: "Ryan C.",
+      role: "Owner, Calgary Landscaping Co.",
       location: "Calgary, AB"
     },
     {
-      quote: "Finally ditched the DIY builder. Site loads instantly now and we're getting actual leads.",
-      author: "Jordan K.",
-      role: "Personal Trainer",
-      location: "Edmonton, AB"
+      quote: "I was skeptical about the one-week thing but they actually delivered. No BS, just straight work. Site's been running smooth for 3 months now.",
+      author: "Mike D.",
+      role: "Roofing Contractor",
+      location: "Airdrie, AB"
+    },
+    {
+      quote: "My Squarespace site was a mess and ranked nowhere. New site is way faster and I'm actually showing up in Google now. Wish I'd done this sooner.",
+      author: "Emma K.",
+      role: "Yoga Instructor",
+      location: "Canmore, AB"
     }
   ];
 
