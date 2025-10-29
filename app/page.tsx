@@ -66,7 +66,9 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <LaunchBanner />
+      <div className="relative z-[100]">
+        <LaunchBanner />
+      </div>
       <Navbar />
       <BackgroundOverlay />
       <CookieConsent />
