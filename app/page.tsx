@@ -80,6 +80,7 @@ export default function Home() {
         <Portfolio />
         <SimplePricing />
         <Testimonials />
+        <BlogPreview />
         <ContactForm />
         <Footer />
       </main>
