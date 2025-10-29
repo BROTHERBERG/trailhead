@@ -12,27 +12,40 @@ type NavbarProps = {
 export default function Navbar({ alwaysSolid = false, variant = 'floating' }: NavbarProps) {
   const [scrolled, setScrolled] = useState(alwaysSolid);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [navbarTop, setNavbarTop] = useState(52); // Start at 52px for banner
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (alwaysSolid) return; // Don't track scroll if always solid
+    if (alwaysSolid || variant === 'static') return; // Don't track scroll if always solid or static
 
     let ticking = false;
+    const bannerHeight = 52; // Height of LaunchBanner
 
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          setScrolled(window.scrollY > 20);
+          const scrollY = window.scrollY;
+          setScrolled(scrollY > 20);
+
+          // Calculate navbar top position based on scroll
+          // When scrollY < bannerHeight, navbar should be pushed down by (bannerHeight - scrollY)
+          // When scrollY >= bannerHeight, navbar should be at top (0)
+          const newTop = Math.max(0, bannerHeight - scrollY);
+          setNavbarTop(newTop);
+
           ticking = false;
         });
         ticking = true;
       }
     };
 
+    // Run once on mount to set initial position
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [alwaysSolid]);
+  }, [alwaysSolid, variant]);
 
   // Handle ESC key and focus trap for mobile menu
   useEffect(() => {
@@ -94,10 +107,11 @@ export default function Navbar({ alwaysSolid = false, variant = 'floating' }: Na
       <header
         className={variant === 'static'
           ? 'relative z-50'
-          : `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          : `fixed left-0 right-0 z-50 transition-all duration-300 ${
               scrolled ? 'mx-4 md:mx-8 lg:mx-12 mt-4' : 'mx-2 md:mx-3 lg:mx-4 mt-2 md:mt-3'
             }`
         }
+        style={variant === 'floating' ? { top: `${navbarTop}px` } : undefined}
       >
         <nav
           className={variant === 'static'

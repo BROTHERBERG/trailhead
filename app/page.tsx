@@ -66,13 +66,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <div className="relative z-[100]">
-        <LaunchBanner />
-      </div>
-
-      {/* Spacer to prevent navbar from overlapping banner */}
-      <div className="h-[52px]"></div>
-
+      <LaunchBanner />
       <Navbar />
       <BackgroundOverlay />
       <CookieConsent />
