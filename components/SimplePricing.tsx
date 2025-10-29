@@ -57,9 +57,6 @@ export default function SimplePricing() {
                 <p className="font-axel font-bold text-6xl md:text-7xl text-[#073742]">
                   <PriceDisplay cadAmount={750} showCurrency={false} />
                 </p>
-                <p className="font-riposte text-lg text-[#073742]/60">
-                  <PriceDisplay cadAmount={750} className="hidden" showCurrency={true} size="small" />
-                </p>
               </div>
               <p className="font-riposte text-base text-[#073742] font-medium mb-1">
                 + <PriceDisplay cadAmount={18} showCurrency={false} />/mo Care & Hosting
@@ -95,7 +92,7 @@ export default function SimplePricing() {
                 Start Your Build
               </CheckoutButton>
               <p className="font-riposte text-xs text-[#073742]/60 text-center">
-                + <PriceDisplay cadAmount={18} showCurrency={true} />/mo for hosting & maintenance
+                + <PriceDisplay cadAmount={18} showCurrency={false} />/mo for hosting & maintenance
               </p>
             </div>
           </div>
