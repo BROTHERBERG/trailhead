@@ -217,7 +217,7 @@ export default function FastCustomWebsite() {
                       <h3 className="font-jetbrains text-sm uppercase text-green-600 mb-2">✓ The Reality</h3>
                       <p className="font-riposte text-[#073742] mb-3">{item.reality}</p>
                       <p className="font-riposte text-sm text-[#073742]/60 italic">
-                        {'proofLink' in item ? (
+                        {'proofLink' in item && item.proofLink ? (
                           <Link href={item.proofLink} className="text-accent underline hover:no-underline">
                             {item.proof}
                           </Link>
