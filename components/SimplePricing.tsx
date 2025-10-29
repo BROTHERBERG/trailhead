@@ -48,11 +48,19 @@ export default function SimplePricing() {
                   One-Page Website
                 </h3>
               </div>
-              <div className="flex items-baseline gap-2 mb-2">
-                <p className="font-axel font-bold text-6xl md:text-7xl text-[#073742]">
-                  $750
+              <div className="mb-2">
+                <p className="font-riposte text-base text-[#073742]/40 line-through mb-1">
+                  Regular: $950 USD
                 </p>
-                <p className="font-riposte text-lg text-[#073742]/60">USD</p>
+                <div className="flex items-baseline gap-2">
+                  <p className="font-axel font-bold text-6xl md:text-7xl text-[#073742]">
+                    $750
+                  </p>
+                  <p className="font-riposte text-lg text-[#073742]/60">USD</p>
+                </div>
+                <p className="font-riposte text-sm text-accent font-bold mt-1">
+                  Launch Special - Save $200
+                </p>
               </div>
               <p className="font-riposte text-base text-[#073742] font-medium mb-1">
                 + $18/mo Care & Hosting

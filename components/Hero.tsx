@@ -63,7 +63,7 @@ export default function Hero() {
         <div className="text-center mb-6 md:mb-2 max-w-7xl mx-auto">
           <h1 className="font-axel font-bold text-cream drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] leading-[0.9]">
             <span className="inline text-[4.5rem] md:hidden">
-              PROFESSIONAL CUSTOM WEBSITES FOR SMALL BUSINESSES
+              PROFESSIONAL CUSTOM WEBSITES FOR LOCAL BUSINESS
             </span>
             <span className="hidden md:block md:text-8xl lg:text-9xl mb-[-16px] lg:mb-[-20px]">
               PROFESSIONAL
@@ -72,14 +72,14 @@ export default function Hero() {
               CUSTOM WEBSITES
             </span>
             <span className="hidden md:block md:text-8xl lg:text-9xl">
-              FOR SMALL BUSINESS
+              FOR LOCAL BUSINESS
             </span>
           </h1>
         </div>
 
         {/* Subheading */}
         <p className="font-riposte text-[#C8E4DA] text-base md:text-xl lg:text-2xl max-w-4xl text-center mb-8 md:mb-12 leading-relaxed px-2">
-          Hand-coded, SEO-ready, and launched in one week — starting at $750 USD
+          Hand-coded, SEO-ready, and launched in one week — <span className="font-bold">$750 USD</span> <span className="text-[#C8E4DA]/70">(launch special - regularly $950)</span>
         </p>
 
         {/* CTA Buttons */}

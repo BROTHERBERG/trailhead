@@ -1,3 +1,4 @@
+import LaunchBanner from "@/components/LaunchBanner";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
@@ -65,6 +66,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
+      <LaunchBanner />
       <Navbar />
       <BackgroundOverlay />
       <CookieConsent />
