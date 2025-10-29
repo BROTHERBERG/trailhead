@@ -10,7 +10,7 @@ export async function GET() {
         "description": "Professional one-page custom website, hand-coded in Next.js, launched in 6 business days",
         "price": {
           "amount": 750,
-          "currency": "USD",
+          "currency": "CAD",
           "billingType": "one-time"
         },
         "deliveryTime": "P6D",
@@ -82,7 +82,7 @@ export async function GET() {
         "description": "Ongoing hosting, maintenance, updates, and monthly content edits",
         "price": {
           "amount": 18,
-          "currency": "USD",
+          "currency": "CAD",
           "billingType": "monthly"
         },
         "includes": [
@@ -107,7 +107,7 @@ export async function GET() {
         "description": "Add-on pages beyond the initial one-page site",
         "price": {
           "amount": 250,
-          "currency": "USD",
+          "currency": "CAD",
           "billingType": "per-page"
         },
         "deliveryTime": "P3D",

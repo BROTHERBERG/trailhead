@@ -6,15 +6,10 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Fast Custom Website Design | Launched in One Week | Trailhead",
-  description: "Professional custom websites launched in one week. Hand-coded Next.js sites starting at $750. No templates, no corners cut. See how we do it.",
-  keywords: ["fast custom website", "website in a week", "quick professional website", "express web design", "fast website design", "custom website fast delivery"],
-  alternates: {
-    canonical: 'https://trailheadmade.com/fast-custom-website',
-  },
-  openGraph: {
-    title: "Fast Custom Website Design | Launched in One Week",
-    description: "Professional custom websites launched in one week. Hand-coded Next.js sites starting at $750. No templates, no corners cut.",
-    type: "website",
+  description: "Professional custom websites launched in one week. Hand-coded Next.js sites starting at $750 CAD. No templates, no corners cut. See how we do it.",
+  robots: {
+    index: false,
+    follow: false,
   },
 };
 

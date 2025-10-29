@@ -7,14 +7,9 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Custom Website Alternative to Wix & Squarespace | Trailhead Calgary",
   description: "Outgrown your website builder? Get a faster, custom-coded site for less than you're paying now. No templates, better SEO, launched in one week.",
-  keywords: ["website builder alternative", "better than Wix", "Squarespace alternative", "custom website Calgary", "Wix vs custom", "upgrade from website builder"],
-  alternates: {
-    canonical: 'https://trailheadmade.com/website-builder-alternative',
-  },
-  openGraph: {
-    title: "Custom Website Alternative to Wix & Squarespace",
-    description: "Outgrown your website builder? Get a faster, custom-coded site for less than you're paying now.",
-    type: "website",
+  robots: {
+    index: false,
+    follow: false,
   },
 };
 

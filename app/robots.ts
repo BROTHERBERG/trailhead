@@ -19,6 +19,8 @@ export default function robots(): MetadataRoute.Robots {
           '/email-preview',
           '/segment-thank-you',
           '/success',
+          '/fast-custom-website',
+          '/website-builder-alternative',
         ],
       },
     ],

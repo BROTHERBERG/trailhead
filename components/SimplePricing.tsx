@@ -3,6 +3,7 @@
 import Link from "next/link";
 import CheckoutButton from "./CheckoutButton";
 import { STRIPE_PRODUCTS } from "@/lib/stripe-config";
+import PriceDisplay from "./PriceDisplay";
 
 export default function SimplePricing() {
   const websiteFeatures = [
@@ -54,12 +55,14 @@ export default function SimplePricing() {
               </div>
               <div className="flex items-baseline gap-2 mb-2">
                 <p className="font-axel font-bold text-6xl md:text-7xl text-[#073742]">
-                  $750
+                  <PriceDisplay cadAmount={750} showCurrency={false} />
                 </p>
-                <p className="font-riposte text-lg text-[#073742]/60">USD</p>
+                <p className="font-riposte text-lg text-[#073742]/60">
+                  <PriceDisplay cadAmount={750} className="hidden" showCurrency={true} size="small" />
+                </p>
               </div>
               <p className="font-riposte text-base text-[#073742] font-medium mb-1">
-                + $18/mo Care & Hosting
+                + <PriceDisplay cadAmount={18} showCurrency={false} />/mo Care & Hosting
               </p>
               <p className="font-riposte text-sm text-[#073742]/60">
                 One-time build • Launch in one week
@@ -92,7 +95,7 @@ export default function SimplePricing() {
                 Start Your Build
               </CheckoutButton>
               <p className="font-riposte text-xs text-[#073742]/60 text-center">
-                + $18 USD/mo for hosting & maintenance
+                + <PriceDisplay cadAmount={18} showCurrency={true} />/mo for hosting & maintenance
               </p>
             </div>
           </div>
@@ -107,7 +110,7 @@ export default function SimplePricing() {
                 </h3>
               </div>
               <p className="font-axel font-bold text-5xl md:text-6xl text-[#073742] mb-2">
-                $18<span className="text-2xl">/mo</span>
+                <PriceDisplay cadAmount={18} showCurrency={false} /><span className="text-2xl">/mo</span>
               </p>
               <p className="font-riposte text-sm md:text-base text-[#073742] font-medium">
                 Required for uptime, SSL, security, updates, 2 content edits/mo, backups, monitoring

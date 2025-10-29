@@ -35,7 +35,7 @@ const riposte = localFont({
 
 export const metadata: Metadata = {
   title: "Affordable Custom Websites Calgary | Fast Launch in One Week | Trailhead",
-  description: "Professional custom websites for small businesses. Hand-coded, SEO-ready, launched in one week. Starting at $750. No templates, no surprises.",
+  description: "Professional custom websites for small businesses. Hand-coded, SEO-ready, launched in one week. Starting at $750 CAD. No templates, no surprises.",
   keywords: ["affordable custom website", "professional website under $1000", "small business website designer", "fast custom website design", "website in a week", "Calgary web design", "affordable web design Calgary", "custom website Calgary"],
   authors: [{ name: "Trailhead" }],
   icons: {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Affordable Custom Websites Calgary | Launched in One Week",
-    description: "Professional custom websites for small businesses. Hand-coded, SEO-ready, launched in one week. Starting at $750.",
+    description: "Professional custom websites for small businesses. Hand-coded, SEO-ready, launched in one week. Starting at $750 CAD.",
     url: "https://trailheadmade.com",
     siteName: "Trailhead",
     images: [
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Affordable Custom Websites Calgary | Launched in One Week",
-    description: "Professional custom websites for small businesses. Hand-coded, SEO-ready, launched in one week. Starting at $750.",
+    description: "Professional custom websites for small businesses. Hand-coded, SEO-ready, launched in one week. Starting at $750 CAD.",
     images: ["/og-image.png"],
   },
 };

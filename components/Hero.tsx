@@ -79,7 +79,7 @@ export default function Hero() {
 
         {/* Subheading */}
         <p className="font-riposte text-[#C8E4DA] text-base md:text-xl lg:text-2xl max-w-4xl text-center mb-8 md:mb-12 leading-relaxed px-2">
-          Hand-coded, SEO-ready, and launched in one week — starting at $750
+          Hand-coded, SEO-ready, and launched in one week — starting at $750 CAD
         </p>
 
         {/* CTA Buttons */}
