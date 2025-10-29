@@ -1,8 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import CheckoutButton from "./CheckoutButton";
-import { STRIPE_PRODUCTS } from "@/lib/stripe-config";
 import PriceDisplay from "./PriceDisplay";
 
 export default function SimplePricing() {
@@ -84,13 +81,12 @@ export default function SimplePricing() {
 
             {/* CTA and Hosting Info */}
             <div className="flex flex-col gap-4 mt-auto">
-              <CheckoutButton
-                priceId={STRIPE_PRODUCTS.signature.priceId}
-                productName="Professional Website"
-                className="bg-[#073742] text-cream hover:bg-[#0a4f5f] hover:shadow-xl hover:shadow-[#073742]/20 w-full px-8 py-4"
+              <a
+                href="#contact"
+                className="bg-[#073742] text-cream hover:bg-[#0a4f5f] hover:shadow-xl hover:shadow-[#073742]/20 w-full px-8 py-4 rounded-full text-sm md:text-base uppercase tracking-tight transition-all duration-300 text-center font-riposte font-bold"
               >
                 Start Your Build
-              </CheckoutButton>
+              </a>
               <p className="font-riposte text-xs text-[#073742]/60 text-center">
                 + <PriceDisplay cadAmount={18} showCurrency={false} />/mo for hosting & maintenance
               </p>
