@@ -69,6 +69,10 @@ export default function Home() {
       <div className="relative z-[100]">
         <LaunchBanner />
       </div>
+
+      {/* Spacer to prevent navbar from overlapping banner */}
+      <div className="h-[52px]"></div>
+
       <Navbar />
       <BackgroundOverlay />
       <CookieConsent />
