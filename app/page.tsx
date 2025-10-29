@@ -71,9 +71,6 @@ export default function Home() {
       <BackgroundOverlay />
       <CookieConsent />
 
-      {/* Spacer for fixed banner */}
-      <div className="h-[52px]"></div>
-
       {/* Main content */}
       <main id="main-content" className="relative z-10 bg-[#f5f0e9]">
         <Hero />
