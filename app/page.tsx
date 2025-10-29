@@ -34,7 +34,7 @@ export default function Home() {
       "name": "One-Week Website Launch",
       "description": "One-page custom website launched in one week (6 business days). Hand-coded, mobile-first, SEO-ready, analytics, SSL, contact form.",
       "price": "750",
-      "priceCurrency": "CAD"
+      "priceCurrency": "USD"
     },
     "areaServed": [
       {

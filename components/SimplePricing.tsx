@@ -1,7 +1,5 @@
 "use client";
 
-import PriceDisplay from "./PriceDisplay";
-
 export default function SimplePricing() {
   const websiteFeatures = [
     "Custom one-page website design",
@@ -52,11 +50,12 @@ export default function SimplePricing() {
               </div>
               <div className="flex items-baseline gap-2 mb-2">
                 <p className="font-axel font-bold text-6xl md:text-7xl text-[#073742]">
-                  <PriceDisplay cadAmount={750} showCurrency={false} />
+                  $750
                 </p>
+                <p className="font-riposte text-lg text-[#073742]/60">USD</p>
               </div>
               <p className="font-riposte text-base text-[#073742] font-medium mb-1">
-                + <PriceDisplay cadAmount={18} showCurrency={false} />/mo Care & Hosting
+                + $18/mo Care & Hosting
               </p>
               <p className="font-riposte text-sm text-[#073742]/60">
                 One-time build • Launch in one week
@@ -88,7 +87,7 @@ export default function SimplePricing() {
                 Start Your Build
               </a>
               <p className="font-riposte text-xs text-[#073742]/60 text-center">
-                + <PriceDisplay cadAmount={18} showCurrency={false} />/mo for hosting & maintenance
+                + $18 USD/mo for hosting & maintenance
               </p>
             </div>
           </div>
@@ -103,7 +102,7 @@ export default function SimplePricing() {
                 </h3>
               </div>
               <p className="font-axel font-bold text-5xl md:text-6xl text-[#073742] mb-2">
-                <PriceDisplay cadAmount={18} showCurrency={false} /><span className="text-2xl">/mo</span>
+                $18<span className="text-2xl">/mo</span>
               </p>
               <p className="font-riposte text-sm md:text-base text-[#073742] font-medium">
                 Required for uptime, SSL, security, updates, 2 content edits/mo, backups, monitoring
