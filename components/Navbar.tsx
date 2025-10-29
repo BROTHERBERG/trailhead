@@ -94,7 +94,7 @@ export default function Navbar({ alwaysSolid = false, variant = 'floating' }: Na
       <header
         className={variant === 'static'
           ? 'relative z-50'
-          : `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          : `fixed top-[52px] left-0 right-0 z-50 transition-all duration-300 ${
               scrolled ? 'mx-4 md:mx-8 lg:mx-12 mt-4' : 'mx-2 md:mx-3 lg:mx-4 mt-2 md:mt-3'
             }`
         }
