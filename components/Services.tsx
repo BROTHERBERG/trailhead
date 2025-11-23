@@ -124,7 +124,7 @@ export default function Services() {
                       alt="Branding Illustration"
                       fill
                       className="object-contain object-bottom-right"
-                      quality={85}
+                      quality={100}
                     />
                   </div>
                 )}
@@ -135,7 +135,7 @@ export default function Services() {
                       alt="Strategy Illustration"
                       fill
                       className="object-contain object-bottom-right"
-                      quality={85}
+                      quality={100}
                     />
                   </div>
                 )}
