@@ -159,7 +159,7 @@ export default function Portfolio() {
                   aria-label={`View ${project.businessType} project details`}
                 >
                   {/* Screenshot */}
-                  <div className="bg-cream border-2 border-[#073742] rounded-lg overflow-hidden mb-3 w-[300px] md:w-[360px] h-[450px] relative shadow-lg group-hover:-translate-y-2 transition-all duration-300">
+                  <div className="bg-cream border-2 border-[#073742] rounded-lg overflow-hidden mb-3 w-[300px] md:w-[360px] h-[450px] relative shadow-lg group-hover:scale-95 transition-all duration-300">
                     {/* Skeleton Loader */}
                     {!loadedImages.has(originalIndex) && (
                       <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e9] via-[#e5dfd3] to-[#f5f0e9] animate-shimmer bg-[length:200%_100%]" />
@@ -210,7 +210,7 @@ export default function Portfolio() {
                   aria-label={`View ${project.businessType} project details`}
                 >
                   {/* Screenshot */}
-                  <div className="bg-cream border-2 border-[#073742] rounded-lg overflow-hidden mb-3 w-[300px] md:w-[360px] h-[450px] relative shadow-lg group-hover:-translate-y-2 transition-all duration-300">
+                  <div className="bg-cream border-2 border-[#073742] rounded-lg overflow-hidden mb-3 w-[300px] md:w-[360px] h-[450px] relative shadow-lg group-hover:scale-95 transition-all duration-300">
                     {/* Skeleton Loader */}
                     {!loadedImages.has(projectIndex) && (
                       <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e9] via-[#e5dfd3] to-[#f5f0e9] animate-shimmer bg-[length:200%_100%]" />
