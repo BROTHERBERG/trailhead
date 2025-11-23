@@ -8,7 +8,12 @@ export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
+  const [isPaused, setIsPaused] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
 
   const handleImageLoad = (index: number) => {
     setLoadedImages(prev => new Set(prev).add(index));
@@ -43,8 +48,62 @@ export default function Portfolio() {
     return () => window.removeEventListener('keydown', handleEscape);
   }, [selectedProject]);
 
+  // Mouse drag handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    isDragging.current = true;
+    startX.current = e.pageX - scrollContainerRef.current.offsetLeft;
+    scrollLeft.current = scrollContainerRef.current.scrollLeft;
+    setIsPaused(true);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX.current) * 2;
+    scrollContainerRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  const handleMouseUp = () => {
+    isDragging.current = false;
+    setTimeout(() => setIsPaused(false), 100);
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging.current) {
+      isDragging.current = false;
+      setTimeout(() => setIsPaused(false), 100);
+    }
+  };
+
+  // Touch handlers for mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (!scrollContainerRef.current) return;
+    isDragging.current = true;
+    startX.current = e.touches[0].pageX - scrollContainerRef.current.offsetLeft;
+    scrollLeft.current = scrollContainerRef.current.scrollLeft;
+    setIsPaused(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging.current || !scrollContainerRef.current) return;
+    const x = e.touches[0].pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX.current) * 2;
+    scrollContainerRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  const handleTouchEnd = () => {
+    isDragging.current = false;
+    setTimeout(() => setIsPaused(false), 100);
+  };
+
   const row1 = projects.slice(0, 7);
   const row2 = projects.slice(7, 14);
+
+  // Triple the arrays for seamless infinite scroll
+  const infiniteRow1 = [...row1, ...row1, ...row1];
+  const infiniteRow2 = [...row2, ...row2, ...row2];
 
   return (
     <section ref={sectionRef} id="work" className="bg-[#f5f0e9] py-20 md:py-20 lg:py-28 overflow-hidden">
@@ -60,94 +119,116 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* Portfolio Cards - Two Rows */}
-      <div className="space-y-3 md:space-y-6">
+      {/* Portfolio Carousel - Synchronized Rows */}
+      <div
+        ref={scrollContainerRef}
+        className="space-y-3 md:space-y-6 cursor-grab active:cursor-grabbing select-none"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         {/* Row 1 */}
-        <div className="overflow-x-auto pl-4 md:pl-8 lg:px-12">
-          <div className="flex gap-6 h-[480px] pt-4 pb-4">
-            {row1.map((project, index) => {
-              const initialOffset = index * 30;
-              const finalPosition = 0; // No horizontal offset for scrolling
+        <div className="overflow-hidden">
+          <div
+            className={`flex gap-6 ${isPaused ? '' : 'animate-scroll-rtl'}`}
+            style={{
+              width: 'fit-content',
+            }}
+          >
+            {infiniteRow1.map((project, index) => {
+              const originalIndex = index % row1.length;
+              const initialOffset = originalIndex * 30;
+              const finalPosition = 0;
               const currentPosition = isVisible ? finalPosition : initialOffset;
 
               return (
                 <button
-                  key={index}
+                  key={`row1-${index}`}
                   type="button"
                   className="flex-shrink-0 group cursor-pointer text-left"
                   style={{
                     transform: `translateY(${currentPosition}px)`,
-                    transition: `transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) ${index * 0.08}s`,
+                    transition: isPaused ? 'none' : `transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) ${originalIndex * 0.08}s`,
                     willChange: isVisible ? 'auto' : 'transform'
                   }}
-                  onClick={() => setSelectedProject(index)}
+                  onClick={() => setSelectedProject(originalIndex)}
                   aria-label={`View ${project.businessType} project details`}
                 >
-                {/* Screenshot */}
-                <div className="bg-cream border-2 border-[#073742] rounded-lg overflow-hidden mb-3 w-[300px] md:w-[360px] h-[450px] relative shadow-lg group-hover:-translate-y-2 transition-all duration-300">
-                  {/* Skeleton Loader */}
-                  {!loadedImages.has(index) && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e9] via-[#e5dfd3] to-[#f5f0e9] animate-shimmer bg-[length:200%_100%]" />
-                  )}
-                  <Image
-                    src={project.image}
-                    alt={project.businessType}
-                    fill
-                    sizes="360px"
-                    quality={85}
-                    loading="lazy"
-                    className={`object-cover transition-opacity duration-500 ${loadedImages.has(index) ? 'opacity-100' : 'opacity-0'}`}
-                    onLoad={() => handleImageLoad(index)}
-                  />
-                </div>
-              </button>
-            );
-          })}
+                  {/* Screenshot */}
+                  <div className="bg-cream border-2 border-[#073742] rounded-lg overflow-hidden mb-3 w-[300px] md:w-[360px] h-[450px] relative shadow-lg group-hover:-translate-y-2 transition-all duration-300">
+                    {/* Skeleton Loader */}
+                    {!loadedImages.has(originalIndex) && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e9] via-[#e5dfd3] to-[#f5f0e9] animate-shimmer bg-[length:200%_100%]" />
+                    )}
+                    <Image
+                      src={project.image}
+                      alt={project.businessType}
+                      fill
+                      sizes="360px"
+                      quality={85}
+                      loading="lazy"
+                      className={`object-cover transition-opacity duration-500 ${loadedImages.has(originalIndex) ? 'opacity-100' : 'opacity-0'}`}
+                      onLoad={() => handleImageLoad(originalIndex)}
+                    />
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
 
         {/* Row 2 */}
-        <div className="overflow-x-auto pl-4 md:pl-8 lg:px-12">
-          <div className="flex gap-6 h-[480px] pt-4 pb-4">
-            {row2.map((project, index) => {
-              const initialOffset = index * 30;
-              const finalPosition = 0; // No horizontal offset for scrolling
+        <div className="overflow-hidden">
+          <div
+            className={`flex gap-6 ${isPaused ? '' : 'animate-scroll-rtl'}`}
+            style={{
+              width: 'fit-content',
+            }}
+          >
+            {infiniteRow2.map((project, index) => {
+              const originalIndex = index % row2.length;
+              const projectIndex = row1.length + originalIndex;
+              const initialOffset = originalIndex * 30;
+              const finalPosition = 0;
               const currentPosition = isVisible ? finalPosition : initialOffset;
-              const projectIndex = row1.length + index;
 
               return (
                 <button
-                  key={index}
+                  key={`row2-${index}`}
                   type="button"
                   className="flex-shrink-0 group cursor-pointer text-left"
                   style={{
                     transform: `translateY(${currentPosition}px)`,
-                    transition: `transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) ${index * 0.08}s`,
+                    transition: isPaused ? 'none' : `transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) ${originalIndex * 0.08}s`,
                     willChange: isVisible ? 'auto' : 'transform'
                   }}
                   onClick={() => setSelectedProject(projectIndex)}
                   aria-label={`View ${project.businessType} project details`}
                 >
-                {/* Screenshot */}
-                <div className="bg-cream border-2 border-[#073742] rounded-lg overflow-hidden mb-3 w-[300px] md:w-[360px] h-[450px] relative shadow-lg group-hover:-translate-y-2 transition-all duration-300">
-                  {/* Skeleton Loader */}
-                  {!loadedImages.has(projectIndex) && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e9] via-[#e5dfd3] to-[#f5f0e9] animate-shimmer bg-[length:200%_100%]" />
-                  )}
-                  <Image
-                    src={project.image}
-                    alt={project.businessType}
-                    fill
-                    sizes="360px"
-                    quality={85}
-                    loading="lazy"
-                    className={`object-cover transition-opacity duration-500 ${loadedImages.has(projectIndex) ? 'opacity-100' : 'opacity-0'}`}
-                    onLoad={() => handleImageLoad(projectIndex)}
-                  />
-                </div>
-              </button>
-            );
-          })}
+                  {/* Screenshot */}
+                  <div className="bg-cream border-2 border-[#073742] rounded-lg overflow-hidden mb-3 w-[300px] md:w-[360px] h-[450px] relative shadow-lg group-hover:-translate-y-2 transition-all duration-300">
+                    {/* Skeleton Loader */}
+                    {!loadedImages.has(projectIndex) && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0e9] via-[#e5dfd3] to-[#f5f0e9] animate-shimmer bg-[length:200%_100%]" />
+                    )}
+                    <Image
+                      src={project.image}
+                      alt={project.businessType}
+                      fill
+                      sizes="360px"
+                      quality={85}
+                      loading="lazy"
+                      className={`object-cover transition-opacity duration-500 ${loadedImages.has(projectIndex) ? 'opacity-100' : 'opacity-0'}`}
+                      onLoad={() => handleImageLoad(projectIndex)}
+                    />
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>

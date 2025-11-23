@@ -23,6 +23,20 @@ const config: Config = {
         jetbrains: ["var(--font-jetbrains)", "monospace"],
         riposte: ["var(--font-riposte)", "serif"],
       },
+      keyframes: {
+        'scroll-rtl': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-33.333%)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
+      },
+      animation: {
+        'scroll-rtl': 'scroll-rtl 30s linear infinite',
+        'shimmer': 'shimmer 2s linear infinite',
+      },
     },
   },
   plugins: [],
